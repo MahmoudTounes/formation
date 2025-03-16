@@ -81,22 +81,26 @@ function HeroContent() {
             </div>
           </div>
         )}
-        <div className="main-content">
-          <h1>L'École des Débutants</h1>
-          <p>
-            "Bienvenue dans notre application dédiée aux jeunes apprenants ! Nous proposons des cours et des formations spécialement conçus pour les débutants en informatique"
-          </p>
+      
+      <section className='hero'>
+        <div className='container'>
+          <div className='row'>
+            <Heading subtitle='WELCOME TO ACADEMIA' title='Best Online Education Expertise' />
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
           <a href="/Register" className="start-button">Commencer maintenant</a>
           <a href="#" className="message-button" onClick={(e) => { e.preventDefault(); toggleChat(); }}>
             <img src="/message.png" alt="Ouvrir la discussion" className="message-image" />
           </a>
         </div>
+        </div>
+    
+      </section>
       </div>
-      <div className="hero-image">
-        <img src="/image4.png" alt="Étudiant souriant" />
-      </div>
+     
     </div>
+
   );
-}
+  }
+
 
 export default HeroContent;
