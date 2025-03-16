@@ -1,7 +1,7 @@
 .drawer-content {
     width: 100%;
-    display: flex; /* Utilisation de flexbox pour la mise en page */
-    flex-direction: column; /* Organisation verticale */
+  /* Utilisation de flexbox pour la mise en page */
+/* Organisation verticale */
     /*align-items: center; /* Centrage horizontal */
     /*padding: 20px; /* Ajout de padding pour l'espace */
 }

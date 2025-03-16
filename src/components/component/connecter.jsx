@@ -3,11 +3,11 @@ import './connecter.css';
 
 function Connecter() {
   const handleStudentClick = () => {
-    window.open('/student', '_blank'); // Opens in a new tab
+    window.open('/login', '_blank'); // Opens in a new tab
   };
 
   const handleTeacherClick = () => {
-    window.open('/professeur', '_blank'); // Opens in a new tab
+    window.open('/login', '_blank'); // Opens in a new tab
   };
 
   return (

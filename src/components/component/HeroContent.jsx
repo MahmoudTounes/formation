@@ -86,7 +86,7 @@ function HeroContent() {
           <p>
             "Bienvenue dans notre application dédiée aux jeunes apprenants ! Nous proposons des cours et des formations spécialement conçus pour les débutants en informatique"
           </p>
-          <a href="/start" className="start-button">Commencer maintenant</a>
+          <a href="/Register" className="start-button">Commencer maintenant</a>
           <a href="#" className="message-button" onClick={(e) => { e.preventDefault(); toggleChat(); }}>
             <img src="/message.png" alt="Ouvrir la discussion" className="message-image" />
           </a>

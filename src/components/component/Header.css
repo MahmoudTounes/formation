@@ -1,10 +1,50 @@
-:root {
-  --primary-color: #007bff; /* Nouvelle couleur primaire */
-  --secondary-color: #867373; /* Nouvelle couleur secondaire */
-  --light-color: hsl(0, 0%, 0%); /* Couleur claire */
-  --dark-color: #28292b; /* Couleur sombre */
+.head {
+  padding: 20px 0;
+  color: #1d3557; /* Dark blue text */
+  background-color: #a8dadc; /* Light blue background */
 }
 
+.head .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 35px;
+  font-weight: 900;
+  margin: 0;
+  display: flex;
+  flex-direction: column
+}
+
+.logo span {
+  font-size: 14px;
+  display: block;
+  color: #457b9d; /* Slightly lighter blue subtitle */
+  display: flex;
+  flex-direction: column
+}
+
+.head .social {
+  display: flex;
+  align-items: center;
+}
+
+.head .icon {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #1d3557; /* Dark blue icons */
+  background-color: #e0f2f7; /* Light background for icons */
+  border-radius: 50%;
+  padding: 8px;
+}
+/*--------head------------*/
+
+/*--------header------------*/
 .header {
   width: 100%;
   background-color: var(--light-color);
@@ -16,39 +56,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+max-width:1200px;
   margin: 0 auto;
   padding: 0 20px;
+  
 }
 
 .menu-icon,
 .user-actions a,
-.search-icon {
-  margin-left: 10px; /* Espacement entre les éléments du menu */
-  cursor: pointer; /* Curseur de pointeur pour indiquer que c'est cliquable */
-  display: flex; /* Pour aligner l'icône et le texte */
-  align-items: center; /* Alignement vertical au centre */
+.search-icon,
+.cart {
+  margin-left: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .menu-icon svg,
-.user-actions svg {
-  font-size: 1.2em; /* Taille des icônes */
+.user-actions svg,
+.cart svg {
+  font-size: 1.2em;
 }
 
 .logo img {
   max-height: 50px;
-  position: absolute;
-  display: block; /* Transforme l'image en élément de bloc */
-  width: 50%; /* Définit la largeur de l'image (adaptez selon vos besoins) */
-  margin: 0 auto; /* Centre l'image */
+  position: relative;
+  display: block;
+  width: auto;
+  margin: 0 40px;
   text-align: center;
-
-
 }
 
 .user-actions {
   display: flex;
   align-items: center;
+  margin-left: 40px;
 }
 
 .user-actions a {
@@ -57,19 +99,18 @@
 }
 
 .search-input {
-  margin-left: 10px;
+  margin-left: 20px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-/* Styles pour le drawer de recherche */
 .search-drawer {
   position: fixed;
-  top: 60px; /* Ajustez selon la hauteur de votre header */
+  top: 60px;
   left: 0;
-  width: 100%; /* Ou une largeur spécifique */
-  height: 100%; /* Ou une hauteur spécifique */
+  width: 100%;
+  height: 100%;
   background-color: white;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -84,22 +125,19 @@
   margin-bottom: 20px;
 }
 
-/* ... (les autres styles CSS) */
-
 .search-drawer-header .close-button {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.5em; /* Ajustez la taille de l'icône si nécessaire */
-  color: black; /* Ajout de la couleur noire */
+  font-size: 1.5em;
+  color: black;
 }
 
-/* Styles pour le drawer du menu (identiques à ceux du drawer de recherche) */
 .drawer {
   position: fixed;
-  top: 60px; /* Ajustez selon la hauteur de votre header */
+  top: 60px;
   left: 0;
-  width: 250px; /* Ou une largeur spécifique */
+  width: 250px;
   background-color: white;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
@@ -134,8 +172,91 @@
   color: var(--dark-color);
 }
 
+.panier-drawer {
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  width: 800px;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 30px;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.panier-vide-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.panier-vide-contenu {
+  text-align: center;
+}
+
+.panier-vide-image {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.panier-vide-title {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.panier-vide-message {
+  margin-bottom: 20px;
+}
+
+.panier-vide-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .top-bar .container {
     padding: 0 10px;
   }
+}
+
+.panier-vide-contenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.panier-vide-contenu > div:first-child {
+  display: flex;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.panier-vide-contenu > div:first-child > span {
+  margin-right: 10px; /* Ajout d'un petit espace à droite de "Panier" */
+}
+
+.panier-vide-contenu > div:first-child > span:last-child {
+  margin-left: auto; /* Déplace "liste souhaits" à la fin de la ligne */
+  margin-right: 70px; 
+  width: min-content;/* Ajout d'un petit espace à droite de "liste souhaits" */
+}
+
+.panier-vide-contenu .close-button {
+  margin-left: 20px;
+  font-size: 1em;
+}
+
+.panier-drawer {
+  padding: 30px;
 }

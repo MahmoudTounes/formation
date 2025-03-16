@@ -44,7 +44,7 @@ function PopularCourses() {
               <img src={course.image} alt={course.title} />
             </div>
             <div className="course-card__details">
-              <a href="/categories" target="_blank" className="formation-button">
+              <a href="/categorielivre" target="_blank" className="formation-button">
                 en savoir plus
               </a>
               <div className="course-card__price">{course.price}</div>
