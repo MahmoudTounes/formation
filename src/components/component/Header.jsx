@@ -35,8 +35,8 @@ function Header() {
   return (
     <>
       <section className='head'>
-        <div className='container flexSB'>
-          <div className='logo'>
+        <div className='head-container '>
+          <div className='logon'>
             <h1>ACADEMIA</h1>
             <span>ONLINE EDUCATION & LEARNING</span>
           </div>
@@ -57,17 +57,14 @@ function Header() {
         </div>
       </section>
 
-      <header className="header">
+      <header className="headerapp">
         <div className="top-bar">
-          <div className="container">
+          <div className="container-app">
             <div className="menu">
               <span onClick={toggleMenu} className="menu-icon">
                 <FontAwesomeIcon icon={faBars} />
                 <span>menu</span>
               </span>
-            </div>
-            <div className="logo">
-              <img src="/logo.png" alt="Image de succès" />
             </div>
             <div className="user-actions">
               <div className="connect">

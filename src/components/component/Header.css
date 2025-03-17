@@ -1,32 +1,38 @@
+Header.css */
+
 .head {
-  padding: 20px 0;
-  color: #1d3557; /* Dark blue text */
-  background-color: #a8dadc; /* Light blue background */
-}
+  padding: 70px 0;
+background-color: #1eb2a663;
 
-.head .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+}
+.head .icon {
+  margin-left: 10px;
+  color:  #1eb2a6;
+  background-color: #fff;
+}
+.head-container {
+  width: 100%; /* Prend toute la largeur de l'écran */
+  padding: 0 20px; /* Espace de 20px à gauche et à droite */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Espace uniformément les éléments */
+  align-items: center; /* Centre verticalement les éléments */
+  background-color: #1eb2a663;
+  height: 100%; /* Prend toute la hauteur du parent (si défini) */
+  box-sizing: border-box; /* Important pour inclure le padding dans la largeur totale */
+  padding-left:  70px;
+  padding-right:  70px;
 }
-
-.logo h1 {
+.logon h1 {
   font-size: 35px;
   font-weight: 900;
   margin: 0;
-  display: flex;
-  flex-direction: column
+  color: #fff;
 }
 
-.logo span {
+.logon span {
   font-size: 14px;
   display: block;
-  color: #457b9d; /* Slightly lighter blue subtitle */
-  display: flex;
-  flex-direction: column
+  color: #fdffff; /* Slightly lighter blue subtitle */
 }
 
 .head .social {
@@ -37,29 +43,35 @@
 .head .icon {
   margin-left: 10px;
   font-size: 20px;
-  color: #1d3557; /* Dark blue icons */
-  background-color: #e0f2f7; /* Light background for icons */
+  color:  #1eb2a6; /* Dark blue icons */
+  background-color: #fdffff; /* Light background for icons */
   border-radius: 50%;
   padding: 8px;
 }
 /*--------head------------*/
 
 /*--------header------------*/
-.header {
+.headerapp {
+  display: flex;
+  align-items: center;
+  justify-content: left;
   width: 100%;
-  background-color: var(--light-color);
-  padding: 10px 0;
-  box-sizing: border-box;
+  min-height: 1vh;
+  padding: 15px 0;
+  margin: 0 30px;
+  margin: 0;
+  background-color: hsla(176°, 71%, 41%, 0.388);
+  position: relative;
+  padding-left:  20px;
 }
 
-.top-bar .container {
+.top-bar .container-app {
   display: flex;
   justify-content: space-between;
   align-items: center;
-max-width:1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  
 }
 
 .menu-icon,
@@ -248,8 +260,8 @@ max-width:1200px;
 
 .panier-vide-contenu > div:first-child > span:last-child {
   margin-left: auto; /* Déplace "liste souhaits" à la fin de la ligne */
-  margin-right: 70px; 
-  width: min-content;/* Ajout d'un petit espace à droite de "liste souhaits" */
+  margin-right: 70px;
+  width: min-content; /* Ajout d'un petit espace à droite de "liste souhaits" */
 }
 
 .panier-vide-contenu .close-button {

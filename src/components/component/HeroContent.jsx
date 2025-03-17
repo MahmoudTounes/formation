@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './HeroContent.css';
+import './HeroContent.css'; // Make sure this path is correct
 
 function HeroContent() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -29,7 +29,7 @@ function HeroContent() {
   };
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -54,9 +54,11 @@ function HeroContent() {
                 </div>
               ))}
               <div ref={messagesEndRef} />
-              <div className="message-dot"></div>
-              <div className="message-dot"></div>
-              <div className="message-dot"></div>
+              <div className="message-dots">
+                <div className="message-dot"></div>
+                <div className="message-dot"></div>
+                <div className="message-dot"></div>
+              </div>
               <div className="message-count">16+</div>
             </div>
             <div className="chat-input">
@@ -71,8 +73,8 @@ function HeroContent() {
                 <button className="chat-action">
                   <img src="/sourire.png" alt="Emoji" />
                 </button>
-                <button className="chat-action">
-                  <img src="/envoyer.png" alt="Image" />
+                <button className="chat-action" onClick={handleSendMessage}>
+                  <img src="/envoyer.png" alt="Envoyer" />
                 </button>
                 <button className="chat-action">
                   <img src="/mincr.png" alt="Microphone" />
@@ -81,26 +83,39 @@ function HeroContent() {
             </div>
           </div>
         )}
-      
-      <section className='hero'>
-        <div className='container'>
-          <div className='row'>
-            <Heading subtitle='WELCOME TO ACADEMIA' title='Best Online Education Expertise' />
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          <a href="/Register" className="start-button">Commencer maintenant</a>
-          <a href="#" className="message-button" onClick={(e) => { e.preventDefault(); toggleChat(); }}>
-            <img src="/message.png" alt="Ouvrir la discussion" className="message-image" />
-          </a>
-        </div>
-        </div>
-    
-      </section>
+
+        <section className="hero-section">
+          <div className="container">
+            <div className="row">
+              <h1>WELCOME TO ACADEMIA</h1>
+              <h2>Best Online Education Expertise</h2>
+              <p>
+                Far far away, behind the word mountains, far from the countries Vokalia and
+                Consonantia, there live the blind texts.
+              </p>
+              <a href="/Register" className="start-button">
+                GET STARTED NOW
+              </a>
+              <button className="primary-btn">
+                VIEW COURSE
+              </button>
+              <button
+                className="message-button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleChat();
+                }}
+              >
+              
+                <img src="/message.png" alt="Ouvrir la discussion" className="message-image" />
+               
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
-     
     </div>
-
   );
-  }
-
+}
 
 export default HeroContent;

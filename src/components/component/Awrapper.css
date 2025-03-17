@@ -1,0 +1,69 @@
+.awrappers-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.image-wrappers {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+.image-wrappers img {
+  width: 1000px;
+  height: auto;
+}
+
+.awrapper-content {
+  padding: 20px;
+}
+
+.awrapper-content h1 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+.awrapper-content h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.course-block {
+  display: block; /* Make the anchor tag a block-level element */
+  text-decoration: none; /* Remove underline from anchor */
+  color: inherit; /* Inherit color from parent */
+  margin-bottom: 15px; /* Add space between blocks */
+}
+
+.course-item {
+  display: flex; /* Use flexbox for image and text */
+  align-items: flex-start;
+  background-color:  #fff;
+}
+
+.course-image {
+  width: 100px;
+  height: 40px;
+  margin-right: 10px; /* Space between image and text */
+}
+
+.course-text {
+  flex: 1; /* Allow text to take remaining space */
+}
+
+.course-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #0f0f10;
+  font-size: 16px;
+}
+
+.course-link:hover {
+  color: #0056b3;
+  background-color: azure;
+}
+
+.course-item p {
+  font-size: 30px;
+  line-height: 1.4;
+  margin: 0;
+}
