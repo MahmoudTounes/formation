@@ -99,17 +99,13 @@ function HeroContent() {
               <button className="primary-btn">
                 VIEW COURSE
               </button>
-              <button
-                className="message-button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  toggleChat();
-                }}
-              >
-              
-                <img src="/message.png" alt="Ouvrir la discussion" className="message-image" />
+            
                
-              </button>
+              
+              
+                
+               
+            
             </div>
           </div>
         </section>

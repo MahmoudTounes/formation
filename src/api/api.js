@@ -3,7 +3,7 @@ import axios from 'axios';
 import { getToken } from '../components/authService'; // Importez getToken
 
 const api = axios.create({
-  baseURL: 'http://localhost:3005/api', // Votre URL de base
+  baseURL: 'http://localhost:3008/api', // Votre URL de base
 });
 
 // Intercepteur pour ajouter le token JWT aux requêtes

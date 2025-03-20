@@ -1,0 +1,84 @@
+.blog-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.blog-header h2 {
+    color: #70c6f0;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.blog-header h3 {
+    color: #666;
+    font-size: 1.5em;
+}
+
+.blog-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.blog-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Added transition */
+}
+
+.blog-card:focus,
+.blog-card:hover {
+    transform: scale(1.05); /* Added focus/hover effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+}
+
+.blog-info {
+    text-align: left;
+    padding: 15px;
+}
+
+.blog-info p {
+    color: #666;
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+.blog-info h3 {
+    color: #333;
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Enhanced responsive adjustments */
+@media (max-width: 1024px) {
+    .blog-card {
+        width: calc(50% - 20px); /* Two cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card {
+        width: 90%; /* One card per row */
+    }
+
+    .blog-header h2 {
+        font-size: 1.8em; /* Adjusted font size for smaller screens */
+    }
+
+    .blog-header h3 {
+        font-size: 1.3em; /* Adjusted font size for smaller screens */
+    }
+}

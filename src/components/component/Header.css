@@ -6,33 +6,38 @@ background-color: #1eb2a663;
 
 }
 .head .icon {
-  margin-left: 10px;
+  margin-left: 40px;
   color:  #1eb2a6;
   background-color: #fff;
 }
 .head-container {
   width: 100%; /* Prend toute la largeur de l'écran */
-  padding: 0 20px; /* Espace de 20px à gauche et à droite */
+   padding:  20px;/* Espace de 20px à gauche et à droite */
   display: flex;
   justify-content: space-between; /* Espace uniformément les éléments */
   align-items: center; /* Centre verticalement les éléments */
   background-color: #1eb2a663;
   height: 100%; /* Prend toute la hauteur du parent (si défini) */
   box-sizing: border-box; /* Important pour inclure le padding dans la largeur totale */
-  padding-left:  70px;
-  padding-right:  70px;
+  
+
+
+
 }
 .logon h1 {
   font-size: 35px;
   font-weight: 900;
   margin: 0;
   color: #fff;
+padding-left: 80px;
 }
 
 .logon span {
   font-size: 14px;
   display: block;
   color: #fdffff; /* Slightly lighter blue subtitle */
+  padding-left: 80px;
+
 }
 
 .head .social {
@@ -41,7 +46,8 @@ background-color: #1eb2a663;
 }
 
 .head .icon {
-  margin-left: 10px;
+
+  margin-right: 50px;
   font-size: 20px;
   color:  #1eb2a6; /* Dark blue icons */
   background-color: #fdffff; /* Light background for icons */
@@ -55,15 +61,19 @@ background-color: #1eb2a663;
   display: flex;
   align-items: center;
   justify-content: left;
-  width: 100%;
+  max-width: 1000px;
   min-height: 1vh;
-  padding: 15px 0;
   margin: 0 30px;
   margin: 0;
   background-color: hsla(176°, 71%, 41%, 0.388);
   position: relative;
-  padding-left:  20px;
+  padding-left:  0px;
+  padding-right:  0px;
+  margin-left: 0px;
+  margin-right: 10px;
+
 }
+
 
 .top-bar .container-app {
   display: flex;
@@ -78,7 +88,7 @@ background-color: #1eb2a663;
 .user-actions a,
 .search-icon,
 .cart {
-  margin-left: 20px;
+  margin-left: 100px;
   cursor: pointer;
   display: flex;
   align-items: center;

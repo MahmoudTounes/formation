@@ -1,0 +1,61 @@
+.courses-grid-containerse {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .courses-grid-headers {
+    margin-bottom: 30px;
+  }
+  
+  .courses-grid-header h1 {
+    font-size: 1.2rem;
+    color: #6c757d; /* Couleur gris pour "COURSES" */
+    margin-bottom: 5px;
+  }
+  
+  .courses-grid-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #343a40; /* Couleur sombre pour le titre principal */
+  }
+  
+  .courses-grids {
+    display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 colonnes de largeur égale */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  }
+  
+  .course-cards {
+    background-color: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Ombre légère */
+    transition: transform 0.3s ease; /* Animation de transition */
+  }
+  
+  .course-cards:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+  }
+  
+  .course-cards img {
+    width: 60px; /* Ajustez la taille de l'image */
+    height: 60px; /* Ajustez la taille de l'image */
+    object-fit: contain;
+    margin: 0 auto 15px; /* Centre et ajoute de l'espace */
+    display: block;
+  }
+  
+  .course-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 8px;
+  }
+  
+  .course-card p {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }

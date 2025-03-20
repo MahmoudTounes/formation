@@ -5,21 +5,23 @@
 
 .image-wrappers {
   flex-shrink: 0;
-  margin-right: 20px;
+  margin-right: 2px;
 }
 
 .image-wrappers img {
-  width: 1000px;
+  width: 600px;
   height: auto;
+  padding: 0px;
+                                   
 }
 
 .awrapper-content {
-  padding: 20px;
+  padding: 10px;
 }
 
 .awrapper-content h1 {
-  font-size: 80px;
-  margin-bottom: 10px;
+  font-size: 8px;
+  margin-bottom: 7px;
 }
 
 .awrapper-content h2 {
@@ -43,7 +45,7 @@
 .course-image {
   width: 100px;
   height: 40px;
-  margin-right: 10px; /* Space between image and text */
+  margin-right: 15px; /* Space between image and text */
 }
 
 .course-text {
@@ -54,7 +56,7 @@
   font-weight: bold;
   text-decoration: underline;
   color: #0f0f10;
-  font-size: 16px;
+  font-size: 10px;
 }
 
 .course-link:hover {

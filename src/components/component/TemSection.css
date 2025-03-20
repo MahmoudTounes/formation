@@ -1,0 +1,106 @@
+.testimonial-sectiont {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.testimonial-headert h2 {
+  color: #439be2; /* Changement de couleur pour correspondre à l'image */
+  margin-bottom: 10px;
+  font-size: 1em; /* Ajustement de la taille de police */
+}
+
+.testimonial-headert h1 {
+  font-size: 1.5em; /* Ajustement de la taille de police */
+  margin-bottom: 30px;
+  color: #666; /* Changement de couleur pour correspondre à l'image */
+}
+
+.student-cardst {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.student-cardt {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease; /* Ajout d'une transition pour l'effet de focus */
+}
+
+.student-cardt:focus,
+.student-cardt:hover {
+  transform: scale(1.05); /* Effet de zoom lors du focus ou du survol */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+}
+
+.student-imagets {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.student-imagets img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.student-infot h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.student-infot p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9em;
+}
+
+.quote-icon {
+  margin-top: 10px;
+  color: #007bff;
+  font-size: 1.5em;
+}
+
+.student-quote {
+  margin-top: 15px;
+  font-style: italic;
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+/* Ajustements responsifs améliorés */
+@media (max-width: 1024px) {
+  .student-cardt {
+    width: calc(50% - 20px); /* Deux cartes par ligne */
+  }
+}
+
+@media (max-width: 768px) {
+  .student-cardt {
+    width: 90%; /* Une carte par ligne */
+  }
+
+  .testimonial-headert h2 {
+    font-size: 1.8em; /* Ajustement de la taille de police pour les petits écrans */
+  }
+
+  .testimonial-headert h1 {
+    font-size: 1.3em; /* Ajustement de la taille de police pour les petits écrans */
+  }
+}

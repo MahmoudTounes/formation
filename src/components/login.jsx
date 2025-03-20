@@ -1,10 +1,8 @@
-// components/Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import { setToken } from './authService';
-import'./component/login.css';
- // Importez l'image
+import './component/login.css';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -22,7 +20,7 @@ function Login() {
     }
 
     try {
-      const response = await axios.post('/api/auth/login', {
+      const response = await axios.post('http://localhost:3008/auth/login', { // Corrected URL
         email,
         password,
       });
@@ -30,7 +28,7 @@ function Login() {
       navigate('/');
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
-        if (error.response.data.message === 'User not found') {
+        if (error.response.data.message === 'Invalid credentials') { // Adjusted error message check
           setModalIsOpen(true);
         } else {
           setErrorModalIsOpen(true);
@@ -84,7 +82,7 @@ function Login() {
         <div className="modal">
           <div className="modal-content">
             <h2>Connexion échouée </h2>
-            <p>You are not yet registered. Please register.</p>
+            <p>Invalid credentials. Please check your email and password.</p>
             <button onClick={closeModal}>Close</button>
           </div>
         </div>

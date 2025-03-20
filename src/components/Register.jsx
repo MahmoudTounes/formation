@@ -10,11 +10,12 @@ function Register() {
     lastName: '',
     email: '',
     password: '',
-    age: '',
     birthDate: '',
     country: '',
     studyLevel: '',
     confirmPassword: '',
+    experiences: [{ title: '', company: '', startDate: '', endDate: '', description: '' }],
+    accountType: 'teacher',
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [passwordModalIsOpen, setPasswordModalIsOpen] = useState(false);
@@ -38,11 +39,35 @@ function Register() {
   };
 
   useEffect(() => {
-    setRegistrationData({ ...registrationData, age: calculateAge(registrationData.birthDate) });
+    const age = calculateAge(registrationData.birthDate);
+    if (age > 20) {
+      setErrorMessage("L'âge ne doit pas dépasser 20 ans.");
+    }
+    setRegistrationData({ ...registrationData, age: age });
   }, [registrationData.birthDate]);
 
   const handleRegistrationChange = (e) => {
     setRegistrationData({ ...registrationData, [e.target.name]: e.target.value });
+  };
+
+  const handleExperienceChange = (e, index) => {
+    const { name, value } = e.target;
+    const experiences = [...registrationData.experiences];
+    experiences[index][name] = value;
+    setRegistrationData({ ...registrationData, experiences });
+  };
+
+  const addExperience = () => {
+    setRegistrationData({
+      ...registrationData,
+      experiences: [...registrationData.experiences, { title: '', company: '', startDate: '', endDate: '', description: '' }],
+    });
+  };
+
+  const removeExperience = (index) => {
+    const experiences = [...registrationData.experiences];
+    experiences.splice(index, 1);
+    setRegistrationData({ ...registrationData, experiences });
   };
 
   const handleRegistrationSubmit = async (e) => {
@@ -59,15 +84,14 @@ function Register() {
       return;
     }
 
-    if (registrationData.age > 20) {
+    if (calculateAge(registrationData.birthDate) > 20) {
       setErrorMessage("L'âge ne doit pas dépasser 20 ans.");
       return;
     }
 
     try {
-      await axios.post('http://localhost:3006/auth/register', registrationData);
+      await axios.post('http://localhost:3008/auth/register', registrationData);
       setErrorMessage('Compte créé avec succès !');
-      // Suppression de navigate('/');
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {
         setErrorMessage(err.response.data.message);
@@ -95,6 +119,20 @@ function Register() {
         <input type="number" name="age" placeholder="Age *" value={registrationData.age} readOnly />
         <input type="text" name="country" placeholder="Pays *" value={registrationData.country} onChange={handleRegistrationChange} required />
         <input type="text" name="studyLevel" placeholder="Niveau d'étude *" value={registrationData.studyLevel} onChange={handleRegistrationChange} required />
+
+        {registrationData.experiences.map((experience, index) => (
+          <div key={index}>
+            <h3>Expérience {index + 1}</h3>
+            <input type="text" name="title" placeholder="Titre" value={experience.title} onChange={(e) => handleExperienceChange(e, index)} required />
+            <input type="text" name="company" placeholder="Entreprise" value={experience.company} onChange={(e) => handleExperienceChange(e, index)} required />
+            <input type="date" name="startDate" placeholder="Date de début" value={experience.startDate} onChange={(e) => handleExperienceChange(e, index)} required />
+            <input type="date" name="endDate" placeholder="Date de fin" value={experience.endDate} onChange={(e) => handleExperienceChange(e, index)} />
+            <textarea name="description" placeholder="Description" value={experience.description} onChange={(e) => handleExperienceChange(e, index)} required />
+            <button type="button" onClick={() => removeExperience(index)}>Supprimer</button>
+          </div>
+        ))}
+        <button type="button" onClick={addExperience}>Ajouter une expérience</button>
+
         <button type="submit">Créer un compte</button>
       </form>
       {errorMessage && <div className="error-message">{errorMessage}</div>}
@@ -123,7 +161,7 @@ function Register() {
               textAlign: 'center',
             }}
           >
-            <h2> mot de passe non validé</h2>
+            <h2>mot de passe non validé</h2>
             <p>
               Le mot de passe doit contenir au moins 8 caractères, des lettres majuscules, minuscules, des chiffres et des caractères spéciaux.
             </p>
