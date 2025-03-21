@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './component/Register.css';
@@ -13,38 +13,18 @@ function Register() {
     birthDate: '',
     country: '',
     studyLevel: '',
-    confirmPassword: '',
     experiences: [{ title: '', company: '', startDate: '', endDate: '', description: '' }],
-    accountType: 'teacher',
+    accountType: 'professeur',
   });
   const [errorMessage, setErrorMessage] = useState('');
   const [passwordModalIsOpen, setPasswordModalIsOpen] = useState(false);
+  const [errorType, setErrorType] = useState('');
   const navigate = useNavigate();
 
   const isPasswordStrong = (password) => {
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return passwordRegex.test(password);
   };
-
-  const calculateAge = (birthDate) => {
-    if (!birthDate) return '';
-    const today = new Date();
-    const birthDateObj = new Date(birthDate);
-    let age = today.getFullYear() - birthDateObj.getFullYear();
-    const monthDiff = today.getMonth() - birthDateObj.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
-      age--;
-    }
-    return age;
-  };
-
-  useEffect(() => {
-    const age = calculateAge(registrationData.birthDate);
-    if (age > 20) {
-      setErrorMessage("L'âge ne doit pas dépasser 20 ans.");
-    }
-    setRegistrationData({ ...registrationData, age: age });
-  }, [registrationData.birthDate]);
 
   const handleRegistrationChange = (e) => {
     setRegistrationData({ ...registrationData, [e.target.name]: e.target.value });
@@ -73,30 +53,26 @@ function Register() {
   const handleRegistrationSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage('');
-
-    if (registrationData.password !== registrationData.confirmPassword) {
-      setErrorMessage('Les mots de passe ne correspondent pas.');
-      return;
-    }
+    setErrorType('');
 
     if (!isPasswordStrong(registrationData.password)) {
       setPasswordModalIsOpen(true);
-      return;
-    }
-
-    if (calculateAge(registrationData.birthDate) > 20) {
-      setErrorMessage("L'âge ne doit pas dépasser 20 ans.");
+      setErrorType('weakPassword');
       return;
     }
 
     try {
-      await axios.post('http://localhost:3008/auth/register', registrationData);
+      await axios.post('http://localhost:3007/auth/register', registrationData);
       setErrorMessage('Compte créé avec succès !');
+      setErrorType('success');
+      navigate('/login');
     } catch (err) {
       if (err.response && err.response.data && err.response.data.message) {
         setErrorMessage(err.response.data.message);
+        setErrorType('serverError');
       } else {
         setErrorMessage("Erreur d'inscription.");
+        setErrorType('unknownError');
       }
     }
   };
@@ -107,18 +83,26 @@ function Register() {
 
   return (
     <div className="signup-form">
-      <h2>Créer un compte Professeur</h2>
+      <h2>Créer un compte</h2>
       <form onSubmit={handleRegistrationSubmit}>
         <input type="text" name="username" placeholder="Nom d'utilisateur *" value={registrationData.username} onChange={handleRegistrationChange} required />
         <input type="text" name="firstName" placeholder="Prénom *" value={registrationData.firstName} onChange={handleRegistrationChange} required />
         <input type="text" name="lastName" placeholder="Nom *" value={registrationData.lastName} onChange={handleRegistrationChange} required />
         <input type="email" name="email" placeholder="Email *" value={registrationData.email} onChange={handleRegistrationChange} required />
         <input type="password" name="password" placeholder="Mot de passe *" value={registrationData.password} onChange={handleRegistrationChange} required minLength="8" />
-        <input type="password" name="confirmPassword" placeholder="Confirmez le mot de passe *" value={registrationData.confirmPassword} onChange={handleRegistrationChange} required minLength="8" />
         <input type="date" name="birthDate" placeholder="Date de naissance *" value={registrationData.birthDate} onChange={handleRegistrationChange} required />
-        <input type="number" name="age" placeholder="Age *" value={registrationData.age} readOnly />
         <input type="text" name="country" placeholder="Pays *" value={registrationData.country} onChange={handleRegistrationChange} required />
         <input type="text" name="studyLevel" placeholder="Niveau d'étude *" value={registrationData.studyLevel} onChange={handleRegistrationChange} required />
+
+        <select
+          name="accountType"
+          value={registrationData.accountType}
+          onChange={handleRegistrationChange}
+          required
+        >
+          <option value="professeur">Professeur</option>
+          <option value="eleve">Élève</option>
+        </select>
 
         {registrationData.experiences.map((experience, index) => (
           <div key={index}>
@@ -135,7 +119,7 @@ function Register() {
 
         <button type="submit">Créer un compte</button>
       </form>
-      {errorMessage && <div className="error-message">{errorMessage}</div>}
+      {errorMessage && <div className={`error-message ${errorType}`}>{errorMessage}</div>}
 
       {passwordModalIsOpen && (
         <div

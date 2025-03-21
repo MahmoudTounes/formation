@@ -10,33 +10,33 @@ function Awrapper() {
       <div className="awrapper-content">
         <h1>LEARN ANYTHING</h1>
         <h2>Benefits About Online Learning Expertise</h2>
-        <a href="/online-courses" className="course-block">
+        <a href="/cours" className="course-block">
           <div className="course-item">
             <img src="/livre.png" alt="Online Courses" className="course-image" />
             <div className="course-text">
-              <a href="/online-courses" className="course-link">Online Courses</a>
+              <a href="/cours" className="course-link">Online Courses</a>
               <p>
                 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
               </p>
             </div>
           </div>
         </a>
-        <a href="/certificates" className="course-block">
+        <a href="/formations" className="course-block">
           <div className="course-item">
             <img src="/liv.jpg" alt="Earn A Certificates" className="course-image" />
             <div className="course-text">
-              <a href="/certificates" className="course-link">Earn A Certificates</a>
+              <a href="/formations" className="course-link">Earn A Certificates</a>
               <p>
                 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
               </p>
             </div>
           </div>
         </a>
-        <a href="/experts" className="course-block">
+        <a href="/formations" className="course-block">
           <div className="course-item">
             <img src="/li.png" alt="Learn with Expert" className="course-image" />
             <div className="course-text">
-              <a href="/experts" className="course-link">Learn with Expert</a>
+              <a href="/formations" className="course-link">Learn with Expert</a>
               <p>
                 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
               </p>

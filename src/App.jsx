@@ -30,6 +30,11 @@ import WebManagement4 from './components/component/Categories/WebManagement4';
 import WebManagement from './components/component/Categories/WebManagement';
 import WebManagemt from './components/component/Categories/WebManagemt';
 import WebManagements from './components/component/Categories/WebManagements';
+import CourseWeb from './components/CoursDetailles/CourseWeb';
+import  CourseProgra from './components/CoursDetailles/CourseProgra';
+import  Webdevelopment from './components/CoursDetailles/Webdevelopment'; 
+import Developments from './components/CoursDetailles/Developments';
+import Progrmation from './components/CoursDetailles/CoursesHref/Progrmation';
 import Cart from './components/liste/Cart';
 import Register from './components/Register';
 import Login from './components/login';
@@ -56,20 +61,22 @@ function App() {
         .catch(error => console.error("Error fetching data:", error));
     }
   }, [isLoggedIn]);
-
   const handleLogin = async () => {
     try {
       const response = await api.post('/api/auth/login', {
-        username: 'testuser',
-        password: 'password123',
+        email: 'testuser@example.com', // Remplacez par l'email de l'utilisateur
+        password: 'password123',      // Remplacez par le mot de passe de l'utilisateur
+        accountType: 'professeur',    // Remplacez par le type de compte de l'utilisateur (professeur ou eleve)
       });
-      setToken(response.data.access_token);
-      setIsLoggedIn(true);
+  
+      // Traitez la réponse ici (par exemple, stockez le token, redirigez l'utilisateur)
+      console.log('Login successful:', response.data);
+  
     } catch (error) {
-      console.error('Login failed:', error);
+      // Gérez les erreurs ici
+      console.error('Login failed:', error.response ? error.response.data : error.message);
     }
   };
-
   const handleLogout = () => {
     removeToken();
     setIsLoggedIn(false);
@@ -114,9 +121,15 @@ function App() {
         <Route path="/WebManagement4" element={<WebManagement4 />} />
         <Route path="/WebManagement" element={<WebManagement />} />
         <Route path="/WebManagemt" element={<WebManagemt />} />
+    
         <Route path="/WebManagements" element={<WebManagements />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} />} /> {/* Passez cartItems au composant Cart */}
+        <Route path="/cart" element={<Cart cartItems={cartItems} />} /> {/* Passez cartItems au composant Cart */}   
         <Route path="/Register" element={<Register />} />
+        <Route path="/CourseWeb" element={<CourseWeb />} />
+        <Route path="/CourseProgra" element={<CourseProgra />} />
+        <Route path="/Webdevelopment" element={<Webdevelopment />} />
+        <Route path="/Developments" element={<Developments />} />
+        <Route path="/Progrmation" element={<Progrmation />} />
       </Routes>
     </BrowserRouter>
   );

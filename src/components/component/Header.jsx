@@ -94,9 +94,12 @@ function Header() {
 
         {isMenuOpen && (
           <div className="drawer">
-            <div className="drawer-header">
-              <span className="menu-text">Menu</span>
-              <span className="logo-text">MYDEV</span>
+            <div className="dramenu-textwer-header">
+            <span className="logo-text">MYDEV</span>
+              <span className="menu-text ">Menu</span>
+              <button className="close-button" onClick={toggleMenu}>
+              Fermer </button>
+              
             </div>
             <nav>
               <ul>
@@ -128,8 +131,9 @@ function Header() {
                   <span onClick={goToWishlist} style={{ cursor: 'pointer' }}>
                     <span>liste.souhaits</span>
                   </span>
-                </div>
+              </div>
                 <button className="close-button" onClick={toggleCart}>Fermer</button>
+               
                 <img
                   className="panier-vide-image"
                   src='./mon.png'

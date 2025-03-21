@@ -1,102 +1,84 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
-import { setToken } from './authService';
-import './component/login.css';
+import './component/login.css'; // Importez votre fichier CSS
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [errorModalIsOpen, setErrorModalIsOpen] = useState(false);
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: '',
+    accountType: 'professeur',
+  });
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLoginChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  };
 
-    if (!email || !password) {
-      setErrorModalIsOpen(true);
-      return;
-    }
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage('');
 
     try {
-      const response = await axios.post('http://localhost:3008/auth/login', { // Corrected URL
-        email,
-        password,
+      const response = await axios.post('http://localhost:3007/auth/login', {
+        email: loginData.email,
+        password: loginData.password,
+        accountType: loginData.accountType,
       });
-      setToken(response.data.access_token);
+      localStorage.setItem('token', response.data.access_token);
       navigate('/');
-    } catch (error) {
-      if (error.response && error.response.data && error.response.data.message) {
-        if (error.response.data.message === 'Invalid credentials') { // Adjusted error message check
-          setModalIsOpen(true);
-        } else {
-          setErrorModalIsOpen(true);
-        }
+    } catch (err) {
+      if (err.response && err.response.data && err.response.data.message) {
+        setErrorMessage(err.response.data.message);
       } else {
-        setErrorModalIsOpen(true);
+        setErrorMessage('Erreur de connexion.');
       }
     }
   };
 
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
-  const closeErrorModal = () => {
-    setErrorModalIsOpen(false);
-  };
-
   return (
     <div className="login-container">
-      <div className="login-form">
-        <img src='./utilisateur.png' alt="User Icon" className="user-icon" />
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label htmlFor="email">Email:</label>
+      <div className="login-image-container">
+        <img src="/utilisateur.png" alt="Login" className="login-image" />
+      </div>
+      <div className="login-form-container">
+        <div className="login-form">
+          <h2>Connexion</h2>
+          <form onSubmit={handleLoginSubmit}>
             <input
               type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              placeholder="Email"
+              value={loginData.email}
+              onChange={handleLoginChange}
+              required
             />
-          </div>
-          <div className="input-group">
-            <label htmlFor="password">Password:</label>
             <input
               type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              placeholder="Mot de passe"
+              value={loginData.password}
+              onChange={handleLoginChange}
+              required
             />
-          </div>
-          <button type="submit">Login</button>
-        </form>
-        <p>
-          Don't have an account? <Link to="/register">Register</Link>
-        </p>
+            <select
+              name="accountType"
+              value={loginData.accountType}
+              onChange={handleLoginChange}
+              required
+            >
+              <option value="professeur">Professeur</option>
+              <option value="eleve">Élève</option>
+            </select>
+            <button type="submit">Se connecter</button>
+          </form>
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
+          <p>
+            Vous n'avez pas de compte ? <Link to="/register">Créer un compte</Link>
+          </p>
+        </div>
       </div>
-
-      {modalIsOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Connexion échouée </h2>
-            <p>Invalid credentials. Please check your email and password.</p>
-            <button onClick={closeModal}>Close</button>
-          </div>
-        </div>
-      )}
-
-      {errorModalIsOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <h2>Connexion échouée </h2>
-            <p>Veuillez vérifier vos identifiants.</p>
-            <button onClick={closeErrorModal}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -1,0 +1,167 @@
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles pour la barre de recherche */
+.amazon-interfacee {
+  background-color: #eaeded;
+}
+
+.headerap {
+  background-color: #232f3e;
+  padding: 10px;
+  color: white;
+}
+
+.header-tope {
+  display: flex;
+  align-items: center;
+}
+
+.logonp {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.address {
+  margin-right: 10px;
+}
+
+.search-bare {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  padding: 0px 10px;
+  width: 500px;
+  height: 20px;
+  background-color: white;
+  color: black;
+}
+
+.search-buttonee {
+  background-color: #febd69;
+  border: none;
+  padding: 12px 15px;
+  color: black;
+  border-radius: 0 4px 4px 0;
+}
+
+.accountse,
+.carte {
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  margin-top: 10px;
+}
+
+.nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Styles pour le contenu principal */
+.main-contentss {
+  padding: 20px;
+}
+
+.herop {
+  background-color: #00a8e1;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.herop h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.herop p {
+  font-size: 1em;
+}
+
+/* Styles pour la liste de livres */
+.livres-amazon {
+  display: flex;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #e9ecef;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #007185;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.title {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour la première ligne */
+  gap: 15px;
+}
+
+/* Styles pour la deuxième ligne de livres */
+.books-grid:nth-child(2) {
+  grid-template-columns: repeat(4, 1fr); /* 4 colonnes pour la deuxième ligne */
+  margin-top: 20px; /* Ajout d'un espace entre les lignes */
+}
+
+.book {
+  text-align: left;
+  background-color: rgb(173, 215, 239);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.book p {
+  margin: 5px 0;
+}
+
+.book .price {
+  font-weight: bold;
+  color: #b12704;
+}
+
+.book .author {
+  font-style: italic;
+  color: #565959;
+}
+
+/* Styles supplémentaires pour les liens */
+.sidebar a:hover {
+  text-decoration: underline;
+}
