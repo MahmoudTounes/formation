@@ -1,31 +1,34 @@
 import React from 'react';
-import './Cours.css'; // Créez ce fichier CSS
+import './format.css'; // Créez ce fichier CSS
 import { Link } from 'react-router-dom'; // Importez Link
 
 function Cours() {
   return (
-    <div className="interface-container">
-      <div className="header">
-        <div className="navigation">
-          <a href="#">Info base</a>
-          <a href="#">Programmation</a>
-          <a href="#">Sécurité</a>
-          <a href="#">Contact</a>
+    <div className="interface-containereq">
+      <div className="headeeq">
+        <div className="navigationeq">
+          <a href="Initiationapp">Info base</a>
+          <a href="Programmationapps">Programmation</a>
+          <a href="Cybersecurite">Sécurité</a>
+          <a href="login">Contact</a>
         </div>
       </div>
-      <div className="content">
-        <div className="text-content">
+      <div className="contenteq">
+        <div className="text-contenteq">
           <h2>Info Débutants</h2>
         </div>
 
-        <div className="image-with-button">
-          <img src="/img.jpg" alt="Description de l'image" className="content-image" />
-          <Link to="/interformation" target="_blank" className="formation-button">
+        <div className="image-with-buttoneqs">
+          {/*<img src="/img.jpg" alt="Description de l'image" className="contenteq-imageeqs" />*/}
+          <Link to="/interformation" target="_blank" className="formationeq-buttoneqs">
             DÉCOUVRIR LES FORMATIONS
-          </Link>
+            </Link>
+            </div>
+            </div>
+            <Link to="/cours" className="return-to-shop">
+                    ← Retour à la accueil
+                    </Link>
         </div>
-      </div>
-    </div>
   );
 }
 

@@ -92,7 +92,6 @@ function Developments() {
               <p>JavaScript pour les débutants</p>
               <p className="price">23,75 €</p>
             </div>
-          
             {/* Ajoutez d'autres livres ici */}
           </div>
         </div>

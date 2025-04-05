@@ -4,19 +4,19 @@ import './Interformation.css'; // Créez ce fichier CSS
 
 function Interformation() {
   return (
-    <div className="interface">
+    <div className="interfacess">
       <header className="header">
         <div className="logo">
           <img src="/logo.png" alt="Logo Interface Formation" />
           <span>Formation</span>
         </div>
-        <nav className="nav">
-        <div className="navigation">
-          <a href="#">InfoBase</a>
-          <a href="#">Programmation</a>
-          <a href="#">Sécurité</a>
-          <a href="#">Contact</a>
-       
+        <nav className="navss">
+        <div className="navigationss">
+          <a href="Initiationapp">InfoBase</a>
+          <a href="Programmationapps">Programmation</a>
+          <a href="Cybersecurite">Sécurité</a>
+          <a href="login">Contact</a>
+
          </div>
         </nav>
       </header>
@@ -25,37 +25,40 @@ function Interformation() {
           <p>Découvrez nos formations en informatique pour débutants !</p>
         </section>
         <section className="formations">
-          <div className="formation-card">
+          <div className="formation-cardss">
             <img src="/image9.png" alt="Initiation à l'informatique" />
             <h3>Initiation à l'informatique</h3>
             <p>Découvrez les bases de l'informatique et des systèmes d'exploitation.</p>
-            <Link to="/initiation">
+            <Link to="/Initiationapp ">
               <button className="learn-more-button">En savoir plus</button>
             </Link>
           </div>
-          <div className="formation-card">
+          <div className="formation-cardss">
             <img src="/images0.jpg" alt="Outils bureautiques" />
             <h3>Outils bureautiques</h3>
             <p>Maîtrisez Word, Excel et PowerPoint pour une productivité accrue.</p>
-            <Link to="/bureautique">
+            <Link to="/Bureautiqueapps">
               <button className="learn-more-button">En savoir plus</button>
             </Link>
           </div>
-          <div className="formation-card">
+          <div className="formation-cardss">
             <img src="/image11.png" alt="Programmation Web" />
             <h3>Programmation Web</h3>
             <p>Apprenez les bases de HTML, CSS et JavaScript pour créer des sites web.</p>
-            <Link to="/programmation">
+            <Link to="/Programmationapps">
               <button className="learn-more-button">En savoir plus</button>
             </Link>
           </div>
-          <div className="formation-card">
+          <div className="formation-cardss">
             <img src="/images3.jpg" alt="Cybersécurité" />
             <h3>Cybersécurité</h3>
             <p>Protégez vos données et apprenez les bonnes pratiques en matière de sécurité informatique.</p>
-            <Link to="/cybersecurite">
+            <Link to="/Cybersecurite">
               <button className="learn-more-button">En savoir plus</button>
             </Link>
+             <Link to="/formations" className="return-to-shop">
+                    ← Retour 
+                    </Link>
           </div>
         </section>
       </main>

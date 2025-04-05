@@ -1,16 +1,26 @@
-.interface {
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.interfacess {
+  width: 100%;
   font-family: sans-serif;
   color: #333;
+  background-color: #1eb2a663;;
 }
 
-.header {
+.headerapps {
   display: flex;
   align-items: center;
   justify-content: center; /* Centrer les éléments horizontalement */
   width: 100%;
-  background-color: #fff0f0;
+  background-color:#1eb2a663;
+  color:#333;
   min-height: 8vh;
   padding: 10px 20px;
+  
 }
 
 .logo {
@@ -25,10 +35,21 @@
 }
 
 .logo span { /* Style pour le texte "Formation" */
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 20px;
   white-space: nowrap;
   text-align:  center ;
+  padding-right: 30px;
+  text-decoration: none;
+  color: rgb(17, 15, 15);
+  white-space: nowrap;
+}
+.navss a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1em;
+  justify-content: space-between;
+  padding: 10px;
+
 }
 
 .main-content {
@@ -47,9 +68,10 @@
   justify-content: space-around;
   flex-wrap: wrap;
   animation: fadeIn 0.5s ease-in-out;
+  padding: 15px;
 }
 
-.formation-card {
+.formation-cardss {
   width: 200px;
   margin-bottom: 20px;
   text-align: center;
@@ -59,32 +81,37 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.formation-card img {
+.formation-cardss img {
   width: 100%;
   height: auto;
   transition: border 0.3s ease;
   animation: fadeIn 0.5s ease-in-out;
   margin-bottom: 10px;
+  padding : 40px;
+  justify-content: space-between;
+
 }
 
-.formation-card div {
+.formation-cardss div {
   text-align: center;
   animation: fadeIn 0.5s ease-in-out 0.4s;
+ 
 }
 
 /* Styles de focus */
-.formation-card div:focus-within,
+.formation-cardss div:focus-within,
 .nav a:focus {
   outline: none;
   border: 2px solid #007bff;
 }
 
-.formation-card img:focus {
+.formation-cardss img:focus {
   outline: none;
   border: 3px solid #007bff;
+  padding-left: 15px;
 }
 
-.formation-card:focus-within img {
+.formation-cardss:focus-within img {
   outline: none;
   border: 3px solid #007bff;
 }

@@ -1,8 +1,9 @@
 // Formation.js
 import React from "react";
+//import "./formation.css";
 import { Link } from "react-router-dom";
 
-const progrmation = [
+const formations = [
   {
     image: "/html.png",
     title: "Formation HTML pour débutants",
@@ -65,7 +66,7 @@ const progrmation = [
   },
 ];
 
-function Progrmation() {
+function Formation() {
   return (
     <div className="app">
       <header className="header">
@@ -96,4 +97,4 @@ function Progrmation() {
   );
 }
 
-export default Progrmation;
+export default Formation;

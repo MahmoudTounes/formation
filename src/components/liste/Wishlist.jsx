@@ -1,7 +1,7 @@
 import React from 'react';
  import './Cart.css' ;// Import your CSS file
 
-const Cart = () => {
+const Wishlist = () => {
   return (
     <div className="panier-vide-containersd">
       <div className="panier-vide-contentsd">
@@ -17,4 +17,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default Wishlist;
