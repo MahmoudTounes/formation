@@ -1,139 +1,480 @@
+import React, { useState } from 'react';
+import './Bureautiqueapps.css'; // Import the CSS file
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-import React from 'react';
+const topCategories = [
+    'Certifications informatiques',
+    'Développement Web',
+    'JavaScript',
+    'React JS',
+    'Cadre d\'application Angular',
+    'Java',
+    'Développement Android',
+];
 
-const courses = [
-  {
-    title: 'Microsoft Word : Maîtriser le traitement de texte',
-    sections: [
-      {
-        title: 'Les bases de Word',
-        videos: [
-          { title: 'Découverte de l\'interface Word', url: 'URL_WORD_BASE_INTERFACE_FR' },
-          { title: 'Créer, ouvrir et enregistrer des documents', url: 'URL_WORD_BASE_FICHIERS_FR' },
-          { title: 'Saisie et mise en forme de texte (police, taille, couleur)', url: 'URL_WORD_BASE_FORMATAGE_TEXTE_FR' },
-        ],
-      },
-      {
-        title: 'Mise en page et organisation',
-        videos: [
-          { title: 'Gestion des marges, de l\'orientation et de la taille du papier', url: 'URL_WORD_MISE_EN_PAGE_FR' },
-          { title: 'Insertion et gestion des sauts de page et de section', url: 'URL_WORD_SAUTS_FR' },
-          { title: 'Utilisation des en-têtes et pieds de page', url: 'URL_WORD_EN_TETES_PIEDS_FR' },
-        ],
-      },
-      {
-        title: 'Objets et fonctionnalités avancées',
-        videos: [
-          { title: 'Insertion et manipulation d\'images et de formes', url: 'URL_WORD_OBJETS_FR' },
-          { title: 'Création et gestion de tableaux', url: 'URL_WORD_TABLEAUX_FR' },
-          { title: 'Introduction au publipostage', url: 'URL_WORD_PUBLIPOSTAGE_INTRO_FR' },
-        ],
-      },
+const subCategoriesData = {
+    'Développement Web': [
+        { name: 'Développement Web', count: '+14 M de participants', filter: 'Développement Web' },
     ],
-  },
-  {
-    title: 'Microsoft Excel : Exploiter la puissance du tableur',
-    sections: [
-      {
-        title: 'Premiers pas avec Excel',
-        videos: [
-          { title: 'Présentation de l\'interface Excel (ruban, cellules, feuilles)', url: 'URL_EXCEL_BASE_INTERFACE_FR' },
-          { title: 'Saisie et modification des données', url: 'URL_EXCEL_SAISIE_DONNEES_FR' },
-          { title: 'Mise en forme des cellules (nombres, texte, alignement)', url: 'URL_EXCEL_FORMATAGE_CELLULES_FR' },
-        ],
-      },
-      {
-        title: 'Formules et fonctions essentielles',
-        videos: [
-          { title: 'Introduction aux formules de calcul (somme, moyenne, etc.)', url: 'URL_EXCEL_FORMULES_BASE_FR' },
-          { title: 'Utilisation des fonctions courantes (SI, RECHERCHEV, NB.SI)', url: 'URL_EXCEL_FONCTIONS_COURANTES_FR' },
-          { title: 'Gestion des références de cellules (relatives, absolues, mixtes)', url: 'URL_EXCEL_REFERENCES_FR' },
-        ],
-      },
-      {
-        title: 'Graphiques et analyse de données',
-        videos: [
-          { title: 'Création et personnalisation de graphiques (histogrammes, courbes, etc.)', url: 'URL_EXCEL_GRAPHIOUES_FR' },
-          { title: 'Tri et filtrage des données', url: 'URL_EXCEL_TRI_FILTRE_FR' },
-          { title: 'Introduction aux tableaux croisés dynamiques', url: 'URL_EXCEL_TCD_INTRO_FR' },
-        ],
-      },
+    'JavaScript': [
+        { name: 'JavaScript', count: '+12 M de participants', filter: 'JavaScript' },
     ],
-  },
-  {
-    title: 'Microsoft PowerPoint : Des présentations percutantes',
-    sections: [
-      {
-        title: 'Démarrer avec PowerPoint',
-        videos: [
-          { title: 'Découverte de l\'interface PowerPoint', url: 'URL_POWERPOINT_BASE_INTERFACE_FR' },
-          { title: 'Création et gestion des diapositives', url: 'URL_POWERPOINT_DIAPOSITIVES_FR' },
-          { title: 'Ajout et mise en forme de texte dans les diapositives', url: 'URL_POWERPOINT_TEXTE_FR' },
-        ],
-      },
-      {
-        title: 'Éléments visuels et multimédia',
-        videos: [
-          { title: 'Insertion et manipulation d\'images et de formes', url: 'URL_POWERPOINT_IMAGES_FORMES_FR' },
-          { title: 'Ajout et configuration de vidéos et d\'audio', url: 'URL_POWERPOINT_MULTIMEDIA_FR' },
-          { title: 'Utilisation des SmartArt et des graphiques', url: 'URL_POWERPOINT_SMARTART_GRAPHIOUES_FR' },
-        ],
-      },
-      {
-        title: 'Transitions et animations',
-        videos: [
-          { title: 'Application et personnalisation des transitions entre les diapositives', url: 'URL_POWERPOINT_TRANSITIONS_FR' },
-          { title: 'Ajout et configuration des animations sur les éléments', url: 'URL_POWERPOINT_ANIMATIONS_FR' },
-          { title: 'Conseils pour des présentations dynamiques et efficaces', url: 'URL_POWERPOINT_CONSEILS_FR' },
-        ],
-      },
+    'React JS': [
+        { name: 'React JS', count: '+8 M de participants', filter: 'React' },
     ],
-  },
+    'Cadre d\'application Angular': [
+        { name: 'Cadre d\'application Angular', count: '+4 M de participants', filter: 'Angular' },
+    ],
+    'Java': [
+        { name: 'Java', count: '+15.5 M de participants', filter: 'Java' },
+    ],
+    'Développement Android': [
+        { name: 'Développement Android', count: '+8 M de participants', filter: 'Android' },
+    ],
+    'Certifications informatiques': [],
+};
+
+const allCourses = [
+    {
+        title: 'Formation Complète Développeur Web 1',
+        instructors: 'John Taibi (Coddy), Apprendre à Coder',
+        rating: 4.6,
+        reviewCount: 27507,
+        price: 74.99,
+        originalPrice: 179.99,
+        imageUrl: 'na.png',
+        isBestSeller: true,
+        category: 'Développement Web',
+        link: '/course/developpement-web-complet-1',
+    },
+    {
+        title: 'Formation Complète Développeur Web 2',
+        instructors: 'John Taibi (Coddy), Apprendre à Coder',
+        rating: 4.7,
+        reviewCount: 28000,
+        price: 79.99,
+        originalPrice: 189.99,
+        imageUrl: 'ns.png',
+        category: 'Développement Web',
+        link: '/course/developpement-web-complet-2',
+    },
+    {
+        title: 'Formation Complète Développeur Web 3',
+        instructors: 'John Taibi (Coddy), Apprendre à Coder',
+        rating: 4.5,
+        reviewCount: 26000,
+        price: 69.99,
+        originalPrice: 169.99,
+        imageUrl: 'nm.png',
+        category: 'Développement Web',
+        link: '/course/developpement-web-complet-3',
+    },
+    {
+        title: 'Formation Complète Développeur Web 4',
+        instructors: 'John Taibi (Coddy), Apprendre à Coder',
+        rating: 4.8,
+        reviewCount: 29000,
+        price: 84.99,
+        originalPrice: 199.99,
+        imageUrl: 'nn.png',
+        category: 'Développement Web',
+        link: '/course/developpement-web-complet-4',
+    },
+    {
+        title: 'JavaScript - The Complete Guide 2024 1',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.8,
+        reviewCount: 15000,
+        price: 89.99,
+        originalPrice: 199.99,
+        imageUrl: 'java.jpg',
+        category: 'JavaScript',
+        link: '/course/javascript-complete-1',
+    },
+    {
+        title: 'JavaScript - The Complete Guide 2024 2',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.7,
+        reviewCount: 14500,
+        price: 84.99,
+        originalPrice: 194.99,
+        imageUrl: 'java.jpg',
+        category: 'JavaScript',
+        link: '/course/javascript-complete-2',
+    },
+    {
+        title: 'JavaScript - The Complete Guide 2024 3',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.9,
+        reviewCount: 16000,
+        price: 94.99,
+        originalPrice: 209.99,
+        imageUrl: 'java.jpg',
+        category: 'JavaScript',
+        link: '/course/javascript-complete-3',
+    },
+    {
+        title: 'JavaScript - The Complete Guide 2024 4',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.6,
+        reviewCount: 13000,
+        price: 79.99,
+        originalPrice: 189.99,
+        imageUrl: 'java.jpg',
+        category: 'JavaScript',
+        link: '/course/javascript-complete-4',
+    },
+    {
+        title: 'React - The Complete Guide 1',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.7,
+        reviewCount: 12000,
+        price: 94.99,
+        originalPrice: 209.99,
+        imageUrl: 'nm.png',
+        category: 'React JS',
+        link: '/course/react-complete-1',
+    },
+    {
+        title: 'React - The Complete Guide 2',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.8,
+        reviewCount: 12500,
+        price: 99.99,
+        originalPrice: 219.99,
+        imageUrl: 'nn.png',
+        category: 'React JS',
+        link: '/course/react-complete-2',
+    },
+    {
+        title: 'React - The Complete Guide 3',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.6,
+        reviewCount: 11500,
+        price: 89.99,
+        originalPrice: 199.99,
+        imageUrl: 'ns.png',
+        category: 'React JS',
+        link: '/course/react-complete-3',
+    },
+    {
+        title: 'React - The Complete Guide 4',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.9,
+        reviewCount: 13000,
+        price: 104.99,
+        originalPrice: 229.99,
+        imageUrl: 'nm.png',
+        category: 'React JS',
+        link: '/course/react-complete-4',
+    },
+    {
+        title: 'Angular - The Complete Guide 1',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.6,
+        reviewCount: 18000,
+        price: 84.99,
+        originalPrice: 204.99,
+        imageUrl: 'na.png',
+        category: 'Cadre d\'application Angular',
+        link: '/course/angular-complete-1',
+    },
+    {
+        title: 'Angular - The Complete Guide 2',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.7,
+        reviewCount: 18500,
+        price: 89.99,
+        originalPrice: 209.99,
+        imageUrl: 'nn.png',
+        category: 'Cadre d\'application Angular',
+        link: '/course/angular-complete-2',
+    },
+    {
+        title: 'Angular - The Complete Guide 3',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.5,
+        reviewCount: 17000,
+        price: 79.99,
+        originalPrice: 199.99,
+        imageUrl: 'ns.png',
+        category: 'Cadre d\'application Angular',
+        link: '/course/angular-complete-3',
+    },
+    {
+        title: 'Angular - The Complete Guide 4',
+        instructors: 'Maximilian Schwarzmüller',
+        rating: 4.8,
+        reviewCount: 19000,
+        price: 94.99,
+        originalPrice: 214.99,
+        imageUrl: 'nm.png',
+        category: 'Cadre d\'application Angular',
+        link: '/course/angular-complete-4',
+    },
+    {
+        title: 'Java Programming Masterclass 1',
+        instructors: 'Tim Buchalka',
+        rating: 4.8,
+        reviewCount: 90000,
+        price: 79.99,
+        originalPrice: 199.99,
+        imageUrl: 'nn.png',
+        category: 'Java',
+        link: '/course/java-masterclass-1',
+    },
+    {
+        title: 'Java Programming Masterclass 2',
+        instructors: 'Tim Buchalka',
+        rating: 4.9,
+        reviewCount: 92000,
+        price: 84.99,
+        originalPrice: 204.99,
+        imageUrl: 'na.png',
+        category: 'Java',
+        link: '/course/java-masterclass-2',
+    },
+    {
+        title: 'Java Programming Masterclass 3',
+        instructors: 'Tim Buchalka',
+        rating: 4.7,
+        reviewCount: 88000,
+        price: 74.99,
+        originalPrice: 194.99,
+        imageUrl: 'nm.png',
+        category: 'Java',
+        link: '/course/java-masterclass-3',
+    },
+    {
+        title: 'Java Programming Masterclass 4',
+        instructors: 'Tim Buchalka',
+        rating: 4.6,
+        reviewCount: 85000,
+        price: 69.99,
+        originalPrice: 189.99,
+        imageUrl: 'ns.png',
+        category: 'Java',
+        link: '/course/java-masterclass-4',
+    },
+    {
+        title: 'Android 14 & Kotlin Masterclass 1',
+        instructors: 'Denis Panjuta',
+        rating: 4.7,
+        reviewCount: 15000,
+        price: 69.99,
+        originalPrice: 179.99,
+        imageUrl: 'na.png',
+        category: 'Développement Android',
+        link: '/course/android-kotlin-1',
+    },
+    {
+        title: 'Android 14 & Kotlin Masterclass 2',
+        instructors: 'Denis Panjuta',
+        rating: 4.8,
+        reviewCount: 15500,
+        price: 74.99,
+        originalPrice: 184.99,
+        imageUrl: 'ns.png',
+        category: 'Développement Android',
+        link: '/course/android-kotlin-2',
+    },
+    {
+        title: 'Android 14 & Kotlin Masterclass 3',
+        instructors: 'Denis Panjuta',
+        rating: 4.6,
+        reviewCount: 14500,
+        price: 64.99,
+        originalPrice: 174.99,
+        imageUrl: 'nm.png',
+        category: 'Développement Android',
+        link: '/course/android-kotlin-3',
+    },
+    {
+        title: 'Android 14 & Kotlin Masterclass 4',
+        instructors: 'Denis Panjuta',
+        rating: 4.9,
+        reviewCount: 16000,
+        price: 79.99,
+        originalPrice: 189.99,
+        imageUrl: 'nn.png',
+        category: 'Développement Android',
+        link: '/course/android-kotlin-4',
+    },
+    {
+        title: 'Info Security Cert 1',
+        instructors: 'Various Experts',
+        rating: 4.5,
+        reviewCount: 5000,
+        price: 99.99,
+        originalPrice: 249.99,
+        imageUrl: 'na.png',
+        category: 'Certifications informatiques',
+        link: '/course/cert-info-1',
+    },
+    {
+        title: 'Info Security Cert 2',
+        instructors: 'Various Experts',
+        rating: 4.7,
+        reviewCount: 5500,
+        price: 109.99,
+        originalPrice: 259.99,
+        imageUrl: 'ns.png',
+        category: 'Certifications informatiques',
+        link: '/course/cert-info-2',
+    },
+    {
+        title: 'Info Security Cert 3',
+        instructors: 'Various Experts',
+        rating: 4.6,
+        reviewCount: 5200,
+        price: 104.99,
+        originalPrice: 254.99,
+        imageUrl: 'nn.png',
+        category: 'Certifications informatiques',
+        link: '/course/cert-info-3',
+    },
+    {
+        title: 'Info Security Cert 4',
+        instructors: 'Various Experts',
+        rating: 4.8,
+        reviewCount: 5800,
+        price: 119.99,
+        originalPrice: 269.99,
+        imageUrl: 'nm.png',
+        category: 'Certifications informatiques',
+        link: '/course/cert-info-4',
+    },
 ];
 
 function Bureautiqueapps() {
-  const VideoItem = ({ video }) => (
-    <div style={{ marginBottom: '15px', border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
-      <h3>{video.title}</h3>
-      <iframe
-        width="560"
-        height="315"
-        src={video.url}
-        title={video.title}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      ></iframe>
-    </div>
-  );
+    const [currentCategory, setCurrentCategory] = useState('Développement Web');
+    const [displayedCourses, setDisplayedCourses] = useState([]);
+    const [courseStartIndex, setCourseStartIndex] = useState(0);
 
-  const Section = ({ section }) => (
-    <div style={{ marginBottom: '30px', padding: '15px', border: '1px solid #eee', borderRadius: '5px' }}>
-      <h2>{section.title}</h2>
-      {section.videos.map((video, index) => (
-        <VideoItem key={index} video={video} />
-      ))}
-    </div>
-  );
+    const coursesToShow = 4;
 
-  const Course = ({ course }) => (
-    <div style={{ marginBottom: '50px', padding: '20px', border: '2px solid #ddd', borderRadius: '10px' }}>
-      <h1>{course.title}</h1>
-      {course.sections.map((section, index) => (
-        <Section key={index} section={section} />
-      ))}
-    </div>
-  );
+    const handleTopCategoryClick = (category) => {
+        setCurrentCategory(category);
+        setCourseStartIndex(0);
+        filterCourses(category);
+    };
 
-  return (
-    <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
-      <h1>Maîtrisez Word, Excel et PowerPoint</h1>
-      <p>Améliorez votre productivité grâce à cette formation complète sur les outils bureautiques essentiels.</p>
-      {courses.map((course, index) => (
-        <Course key={index} course={course} />
-      ))}
-    </div>
-  );
+    const filterCourses = (category) => {
+        const filtered = allCourses.filter(course => course.category === category);
+        setDisplayedCourses(filtered);
+    };
+
+    const handlePrevClick = () => {
+        setCourseStartIndex(prev => Math.max(0, prev - coursesToShow));
+    };
+
+    const handleNextClick = () => {
+        setCourseStartIndex(prev => Math.min(displayedCourses.length - coursesToShow, prev + coursesToShow));
+    };
+
+    const visibleCourses = displayedCourses.slice(courseStartIndex, courseStartIndex + coursesToShow);
+    const hasPrev = courseStartIndex > 0;
+    const hasNext = displayedCourses.length > coursesToShow && courseStartIndex + coursesToShow < displayedCourses.length;
+
+    React.useEffect(() => {
+        filterCourses(currentCategory);
+    }, [currentCategory]);
+
+    return (
+        <div className="skillsDisplaySection">
+            <div className="skillsDisplaySection__header">
+                <h1 className="skillsDisplaySection__mainTitle">Les meilleurs cours de {currentCategory}</h1>
+                <p className="skillsDisplaySection__headline">Les cours les plus consultés et les mieux notés.</p>
+            </div>
+
+            <ul className="skillsDisplaySection__topCategories">
+                {topCategories.map((category, index) => (
+                    <li key={index} className={`skillsDisplaySection__topCategoryItem ${category === currentCategory ? 'skillsDisplaySection__topCategoryItem--active' : ''}`}>
+                        <button
+                            className="skillsDisplaySection__topCategoryButton"
+                            onClick={() => handleTopCategoryClick(category)}
+                        >
+                            {category}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+
+            {subCategoriesData[currentCategory] && subCategoriesData[currentCategory].length > 0 && (
+                <div className="skillsDisplaySection__subCategories">
+                    {subCategoriesData[currentCategory].map((subCategory, index) => (
+                        <button
+                            key={index}
+                            className={`skillsDisplaySection__subCategoryButton`}
+                        >
+                            {subCategory.name}
+                            <span className="skillsDisplaySection__participantCount">{subCategory.count}</span>
+                        </button>
+                    ))}
+                </div>
+            )}
+
+            <div className="skillsDisplaySection__courseCarousel">
+                {hasPrev && (
+                    <button className="skillsDisplaySection__carouselButton skillsDisplaySection__carouselButton--prev" onClick={() => handlePrevClick()}>
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                </button>
+            )}
+            <div className="skillsDisplaySection__courseList">
+                {visibleCourses.map((course, index) => (
+                    <div key={index} className="skillsDisplaySection__courseItem">
+                        <a href={course.link} className="skillsDisplaySection__courseLink">
+                            <div className="skillsDisplaySection__courseImageContainer">
+                                <img
+                                    src={course.imageUrl}
+                                    alt={course.title}
+                                    className="skillsDisplaySection__courseImage"
+                                />
+                                {course.isBestSeller && (
+                                    <span className="skillsDisplaySection__bestSeller">Bestseller</span>
+                                )}
+                            </div>
+                            <h3 className="skillsDisplaySection__courseTitle">{course.title}</h3>
+                            <p className="skillsDisplaySection__courseInstructors">{course.instructors}</p>
+                            <div className="skillsDisplaySection__courseRating">
+                                <span className="skillsDisplaySection__ratingValue">{course.rating}</span>
+                                <span className="skillsDisplaySection__star">★</span>
+                                <span className="skillsDisplaySection__reviewCount">({course.reviewCount})</span>
+                            </div>
+                            <div className="skillsDisplaySection__coursePrice">
+                                <span className="skillsDisplaySection__currentPrice">E£{course.price.toFixed(2)}</span>
+                                {course.originalPrice && (
+                                    <span className="skillsDisplaySection__originalPrice">E£{course.originalPrice.toFixed(2)}</span>
+                                )}
+                            </div>
+                        </a>
+                    </div>
+                ))}
+            </div>
+            {hasNext && (
+                <button className="skillsDisplaySection__carouselButton skillsDisplaySection__carouselButton--next" onClick={() => handleNextClick()}>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                </button>
+              
+            
+            )}       <div className="viewAllButtonContainer">
+            <a href="/Cybersecurite" className="viewAllButtonLink">
+              <button className="viewAllButton">
+                Afficher tous les cours de la catégorie Science des données
+              </button>
+            </a>
+          </div>
+        </div>
+    
+        
+        </div>
+         
+   
+        
+
+    
+);
 }
 
 export default Bureautiqueapps;
