@@ -1,132 +1,143 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-.interfacess {
-  width: 100%;
-  font-family: sans-serif;
-  color: #333;
-  background-color: #1eb2a663;;
-}
+/* Interformation.css */
 
-.headerapps {
+.udemy-navbar {
+  background-color: #fff;
+  color: #000;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centrer les éléments horizontalement */
-  width: 100%;
-  background-color:#1eb2a663;
-  color:#333;
-  min-height: 8vh;
   padding: 10px 20px;
-  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  height: 60px; /* Adjust as needed */
 }
 
-.logo {
+.udemy-logo {
+  margin-right: 20px;
+}
+
+.udemy-logo img {
+  height: 40px; /* Adjust logo size */
+}
+
+.navbar-links {
+  margin-right: 20px;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  color: #505763;
+  font-size: 1rem;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.search-bar {
   display: flex;
   align-items: center;
-  /* Supprimer margin-right pour centrer le titre */
+  flex-grow: 1;
+  margin-right: 20px;
+  background-color: #fff;
+  border: 1px solid #d3d7de; /* Add a border */
+  border-radius: 25px; /* Make it fully rounded */
+  overflow: hidden; /* Clip the content to the border-radius */
 }
 
-.logo img {
-  width: 50px;
-  animation: fadeIn 0.5s ease-in-out;
+.search-bar input {
+  flex-grow: 1;
+  padding: 10px 15px; /* Adjust padding for spacing */
+  border: none; /* Remove individual input border */
+  border-radius: 0; /* Remove individual input border-radius */
+  font-size: 1rem;
+  outline: none;
 }
 
-.logo span { /* Style pour le texte "Formation" */
-  font-size: 20px;
-  white-space: nowrap;
-  text-align:  center ;
-  padding-right: 30px;
-  text-decoration: none;
-  color: rgb(17, 15, 15);
-  white-space: nowrap;
+.search-bar input::placeholder {
+  color: #868f9b; /* Match placeholder text color */
 }
-.navss a {
+
+.search-icon {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 25px 25px 0; /* Keep right rounded corners */
+  background-color: transparent; /* Make the icon background transparent */
+  color: #868f9b; /* Match icon color */
+  cursor: pointer;
+  outline: none;
+}
+
+.search-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #868f9b; /* Match icon fill color */
+}
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
   text-decoration: none;
-  color: #333;
-  font-size: 1.1em;
-  justify-content: space-between;
+  color: #505763;
+  font-size: 1rem;
+  margin-left: 15px;
+  padding: 10px 0;
+}
+
+.cart-button {
+  background: none;
+  border: none;
+  color: #505763;
+  font-size: 1rem;
+  margin-left: 15px;
   padding: 10px;
-
-}
-
-.main-content {
-  padding: 20px;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.intro {
-  text-align: center;
-  margin-bottom: 30px;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.formations {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  animation: fadeIn 0.5s ease-in-out;
-  padding: 15px;
-}
-
-.formation-cardss {
-  width: 200px;
-  margin-bottom: 20px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.formation-cardss img {
-  width: 100%;
-  height: auto;
-  transition: border 0.3s ease;
-  animation: fadeIn 0.5s ease-in-out;
-  margin-bottom: 10px;
-  padding : 40px;
-  justify-content: space-between;
-
-}
-
-.formation-cardss div {
-  text-align: center;
-  animation: fadeIn 0.5s ease-in-out 0.4s;
- 
-}
-
-/* Styles de focus */
-.formation-cardss div:focus-within,
-.nav a:focus {
+  cursor: pointer;
   outline: none;
-  border: 2px solid #007bff;
 }
 
-.formation-cardss img:focus {
+.cart-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #505763;
+}
+
+.login-button {
+  background: none;
+  border: 1px solid #d3d7de;
+  color: #505763;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-left: 15px;
   outline: none;
-  border: 3px solid #007bff;
-  padding-left: 15px;
 }
 
-.formation-cardss:focus-within img {
+.signup-button {
+  background-color: #a435f0;
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-left: 10px;
   outline: none;
-  border: 3px solid #007bff;
 }
 
-/* Styles de survol */
-.formation-card img:hover {
-  border: 2px solid #007bff;
+.language-button {
+  background: none;
+  border: none;
+  color: #505763;
+  font-size: 1rem;
+  margin-left: 15px;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
 }
 
-/* Animation de fondu en entrée */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.language-button svg {
+  width: 20px;
+  height: 20px;
+  fill: #505763;
 }

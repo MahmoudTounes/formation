@@ -1,69 +1,40 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Importez Link
-import './Interformation.css'; // Créez ce fichier CSS
+import './Interformation.css'; // Import the CSS file
 
-function Interformation() {
+function interformation() {
   return (
-    <div className="interfacess">
-      <header className="header">
-        <div className="logo">
-          <img src="/logo.png" alt="Logo Interface Formation" />
-          <span>Formation</span>
-        </div>
-        <nav className="navss">
-        <div className="navigationss">
-          <a href="Initiationapp">InfoBase</a>
-          <a href="Programmationapps">Programmation</a>
-          <a href="Cybersecurite">Sécurité</a>
-          <a href="login">Contact</a>
-
-         </div>
-        </nav>
-      </header>
-      <main className="main-content">
-        <section className="intro">
-          <p>Découvrez nos formations en informatique pour débutants !</p>
-        </section>
-        <section className="formations">
-          <div className="formation-cardss">
-            <img src="/image9.png" alt="Initiation à l'informatique" />
-            <h3>Initiation à l'informatique</h3>
-            <p>Découvrez les bases de l'informatique et des systèmes d'exploitation.</p>
-            <Link to="/Initiationapp ">
-              <button className="learn-more-button">En savoir plus</button>
-            </Link>
-          </div>
-          <div className="formation-cardss">
-            <img src="/images0.jpg" alt="Outils bureautiques" />
-            <h3>Outils bureautiques</h3>
-            <p>Maîtrisez Word, Excel et PowerPoint pour une productivité accrue.</p>
-            <Link to="/Bureautiqueapps">
-              <button className="learn-more-button">En savoir plus</button>
-            </Link>
-          </div>
-          <div className="formation-cardss">
-            <img src="/image11.png" alt="Programmation Web" />
-            <h3>Programmation Web</h3>
-            <p>Apprenez les bases de HTML, CSS et JavaScript pour créer des sites web.</p>
-            <Link to="/Programmationapps">
-              <button className="learn-more-button">En savoir plus</button>
-            </Link>
-          </div>
-          <div className="formation-cardss">
-            <img src="/images3.jpg" alt="Cybersécurité" />
-            <h3>Cybersécurité</h3>
-            <p>Protégez vos données et apprenez les bonnes pratiques en matière de sécurité informatique.</p>
-            <Link to="/Cybersecurite">
-              <button className="learn-more-button">En savoir plus</button>
-            </Link>
-             <Link to="/formations" className="return-to-shop">
-                    ← Retour 
-                    </Link>
-          </div>
-        </section>
-      </main>
+    <div className="udemy-navbar">
+      <div className="udemy-logo">
+        <img src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="Udemy" />
+      </div>
+      <div className="navbar-links">
+        <button className="dropdown-button">Découvrir</button>
+      </div>
+      <div className="search-bar">
+        <input type="text" placeholder="Que souhaitez-vous apprendre ?" />
+        <button className="search-icon">
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M21.71 20.29L18 16.6A9 9 0 1016.6 18l3.7 3.71a1 1 0 101.42-1.42zM10 16a6 6 0 110-12 6 6 0 010 12z"></path>
+          </svg>
+        </button>
+      </div>
+      <div className="navbar-actions">
+        <a href="#" className="navbar-link">Certificate</a>
+        <button className="cart-button">
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M9 20a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2zM2 2h2l2 16h16l-1 2H4a1 1 0 01-1-1H2V2zm3 4h14v10H5V6z"></path>
+          </svg>
+        </button>
+        <button className="login-button">Se connecter</button>
+        <button className="signup-button">S'inscrire</button>
+        <button className="language-button">
+          <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M12.87 15.07l-2.54-2.53c1.74-1.74 2.98-4.17 3.71-6.8H17V4h-2.5v1.79h-.02C13.49 6.19 11.52 8.22 9.16 9.75L6.43 7.02a8 8 0 10-2.12 2.12L9.16 9.75c.47.6.98 1.15 1.54 1.67l2.54 2.53zM12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm-1-8v2h2v-2h-2z"></path>
+          </svg>
+        </button>
+      </div>
     </div>
   );
 }
 
-export default Interformation;
+export default interformation;

@@ -1,0 +1,141 @@
+/* pages.css */
+
+.skills-evolution-container {
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden; /* To contain the slider */
+  transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease; /* Add transition for background image */
+}
+
+.slider-arrow {
+  background-color: #fff;
+  border: 1px solid #d3d7de;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: fill 0.3s ease; /* Smooth arrow color transition */
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+.slider-arrow svg {
+  width: 24px;
+  height: 24px;
+  /* Fill color will be dynamically set via style */
+}
+
+.slide {
+  flex: 0 0 100%; /* Each slide takes full width */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align text to the left */
+  padding: 20px;
+}
+
+.text-content {
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  transition: background-color 0.3s ease; /* Smooth text box background transition */
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  /* Color will be dynamically set via style */
+}
+
+.text-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  /* Color will be dynamically set via style */
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.primary-button {
+  background-color: #a435f0;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+  background-color: #8628c2;
+}
+
+.secondary-button {
+  background-color: #fff;
+  color: #a435f0;
+  border: 1px solid #a435f0;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.secondary-button:hover {
+  background-color: #f9f2ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .skills-evolution-container {
+    flex-direction: column;
+    background-position: top center; /* Adjust background position for smaller screens */
+  }
+
+  .slide {
+    justify-content: center;
+  }
+
+  .slider-arrow {
+    display: block; /* Show arrows on smaller screens if needed */
+  }
+}
+
+@media (max-width: 600px) {
+  .text-content {
+    padding: 20px;
+  }
+
+  .text-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buttons button {
+    margin-bottom: 10px;
+  }
+}
