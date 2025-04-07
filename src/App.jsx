@@ -45,6 +45,7 @@ import Coursesapps from './components/component/listeFormation/Coursesapps';
 import FormationDetaill from './components/component/listeFormation/FormationDetaill';
 import PgeFormateurapps from './components/component/listeFormation/PageFormateurapps';
 import CoursesFormateur from './components/component/listeFormation/CoursesFormateur';
+import Payer from './components/component/Categories/Payer';
 import Register from './components/Register';
 import Login from './components/login';
 import Header from './components/Header';
@@ -152,6 +153,7 @@ function App() {
         <Route path ="/FormationDetaill" element={<FormationDetaill/>}/>
         <Route path ="/PgeFormateurapps" element={<PgeFormateurapps/>}/>
         <Route path ="/CoursesFormateur" element={<CoursesFormateur/>}/>
+        <Route path = "/Payer" element={<Payer/>}/>
       
        
       </Routes>
