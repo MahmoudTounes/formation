@@ -1,6 +1,8 @@
 import React from 'react';
 import Interformation from '../Interformation';
 import './Cybersecurite.css'; // Import CSS file
+import Coursesapps from './Coursesapps';
+import FormationDetaill from './FormationDetaill';
 
 const courses = [
     {
@@ -75,6 +77,7 @@ function Formations() {
     return (
         <div className="drawer-contentazq">
             <Interformation />
+          
             <div className="data-science-sectionaz">
                 <h2>Cours sur le sujet Data Science</h2>
                 <div className="browse-sectionazs">
@@ -94,6 +97,9 @@ function Formations() {
                     <div className="navigation-arrow right-arrow">&gt;</div>
                 </div>
             </div>
+            <Coursesapps/>
+            <FormationDetaill/>
+            
         </div>
     );
 }

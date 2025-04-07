@@ -41,6 +41,10 @@ import Initiationapp from './components/component/listeFormation/Initiationapp';
 import Bureautiqueapps from './components/component/listeFormation/Bureautiqueapps'
 import  Programmationapps from'./components/component/listeFormation/Programmationapps';
 import Cybersecurite from './components/component/listeFormation/Cybersecurite';
+import Coursesapps from './components/component/listeFormation/Coursesapps';
+import FormationDetaill from './components/component/listeFormation/FormationDetaill';
+import PgeFormateurapps from './components/component/listeFormation/PageFormateurapps';
+import CoursesFormateur from './components/component/listeFormation/CoursesFormateur';
 import Register from './components/Register';
 import Login from './components/login';
 import Header from './components/Header';
@@ -144,6 +148,12 @@ function App() {
         <Route path="/Bureautiqueapps"element={<Bureautiqueapps/>}/>
         <Route path="/Programmationapps" element={<Programmationapps/>}/>
         <Route path="/Cybersecurite" element={<Cybersecurite/>}/>
+        <Route path ="/Coursesapps"elemnt ={<Coursesapps/>}/>
+        <Route path ="/FormationDetaill" element={<FormationDetaill/>}/>
+        <Route path ="/PgeFormateurapps" element={<PgeFormateurapps/>}/>
+        <Route path ="/CoursesFormateur" element={<CoursesFormateur/>}/>
+      
+       
       </Routes>
     </BrowserRouter>
   );
