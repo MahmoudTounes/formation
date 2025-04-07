@@ -1,0 +1,152 @@
+/* VideoCourses.css */
+
+.video-course-list-containerappt {
+    display: flex;
+    flex-direction: column; /* Arrange items in a single column */
+    gap: 15px; /* Adjust vertical spacing between courses */
+    padding: 15px;
+    background-color: #f7f9fa;
+  }
+  
+  .video-course-cardtre {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex; /* Arrange image and info horizontally */
+    align-items: center; /* Vertically align image and info */
+    overflow: hidden;
+    padding: 10px; /* Add some padding inside the card */
+  }
+  
+  .video-course-previewesd {
+    width: 160px; /* Adjust image width as needed */
+    height: 90px; /* Maintain aspect ratio */
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #ddd; /* Placeholder background for images */
+    flex-shrink: 0; /* Prevent image from shrinking */
+  }
+  
+  .video-course-previewesd img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .badgeerd {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #ffe347;
+    color: #1c1d1f;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    z-index: 1; /* Ensure badge is above image */
+  }
+  
+  .video-course-infoerdsz {
+    padding-left: 15px; /* Space between image and text */
+    flex-grow: 1; /* Allow info to take remaining space */
+  }
+  
+  .video-course-title {
+    font-size: 1rem;
+    color: #1c1d1f;
+    margin-bottom: 3px;
+    line-height: 1.2;
+  }
+  
+  .video-course-instructorertfc {
+    color: #505763;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .video-course-ratingeszr {
+    display: flex;
+    align-items: center;
+    color: #b4690e;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  
+  .ratingdfe {
+    margin-right: 3px;
+    font-weight: bold;
+  }
+  
+  .starsddx {
+    color: #b4690e;
+    margin-right: 3px;
+    font-size: 0.8rem;
+  }
+  
+  .reviewsdezr {
+    color: #6a6f73;
+    font-size: 0.75rem;
+  }
+  
+  .video-course-durationred {
+    color: #6a6f73;
+    font-size: 0.75rem;
+  }
+  
+  .video-course-actionsdesz {
+    padding-left: 15px; /* Space for the price and button */
+    display: flex;
+    align-items: center;
+  }
+  
+  .video-course-pricezeser {
+    font-size: 1rem;
+    color: #1c1d1f;
+    font-weight: bold;
+    margin-right: 15px; /* Space between price and button */
+  }
+  
+  .wishlist-buttonredsxz {
+    background: none;
+    border: 1px solid #d1d7dc;
+    color: #a435f0;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .wishlist-buttonredsxz:hover {
+    background-color: #f2f2f2;
+    border-color: #a435f0;
+  }
+  
+  .wishlist-buttonredsxz svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+  
+  .show-more-buttonerdsz {
+    background: none;
+    color: #007791;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    transition: color 0.2s ease;
+  }
+  
+  .show-more-buttonerdsz:hover {
+    color: #005a6e;
+    text-decoration: underline;
+  }
