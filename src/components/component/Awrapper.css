@@ -1,30 +1,29 @@
-.awrappers-container {
+.learning-options-containerff {
   display: flex;
   align-items: flex-start;
 }
 
-.image-wrappers {
+.image-wrapperff {
   flex-shrink: 0;
   margin-right: 2px;
 }
 
-.image-wrappers img {
+.image-wrapperff img {
   width: 600px;
   height: auto;
   padding: 0px;
-                                   
 }
 
-.awrapper-content {
-  padding: 10px;
+.learning-options-contentff {
+  padding: 4px;
 }
 
-.awrapper-content h1 {
+.learning-options-content h1 {
   font-size: 8px;
   margin-bottom: 7px;
 }
 
-.awrapper-content h2 {
+.learning-options-content h2 {
   font-size: 30px;
   margin-bottom: 20px;
 }
@@ -39,11 +38,11 @@
 .course-item {
   display: flex; /* Use flexbox for image and text */
   align-items: flex-start;
-  background-color:  #fff;
+  background-color: #fff;
 }
 
-.course-image {
-  width: 100px;
+.course-imagess {
+  
   height: 40px;
   margin-right: 15px; /* Space between image and text */
 }
@@ -65,7 +64,7 @@
 }
 
 .course-item p {
-  font-size: 30px;
+  font-size: 15px;
   line-height: 1.4;
-  margin: 0;
+ 
 }

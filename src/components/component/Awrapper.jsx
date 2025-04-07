@@ -3,16 +3,16 @@ import './Awrapper.css';
 
 function Awrapper() {
   return (
-    <div className="awrappers-container">
-      <div className="image-wrappers">
+    <div className="learning-options-containerff">
+      <div className="image-wrapperff">
         <img src="./imagee.png" alt="Description de l'image" />
       </div>
-      <div className="awrapper-content">
+      <div className="learning-options-contentff">
         <h1>LEARN ANYTHING</h1>
         <h2>Benefits About Online Learning Expertise</h2>
         <a href="/cours" className="course-block">
           <div className="course-item">
-            <img src="/livre.png" alt="Online Courses" className="course-image" />
+            <img src="/livre.png" alt="Online Courses" className="course-imagess" />
             <div className="course-text">
               <a href="/cours" className="course-link">Online Courses</a>
               <p>
@@ -23,7 +23,7 @@ function Awrapper() {
         </a>
         <a href="/formations" className="course-block">
           <div className="course-item">
-            <img src="/liv.jpg" alt="Earn A Certificates" className="course-image" />
+            <img src="/liv.jpg" alt="Earn A Certificates" className="course-imagess" />
             <div className="course-text">
               <a href="/formations" className="course-link">Earn A Certificates</a>
               <p>
@@ -34,7 +34,7 @@ function Awrapper() {
         </a>
         <a href="/formations" className="course-block">
           <div className="course-item">
-            <img src="/li.png" alt="Learn with Expert" className="course-image" />
+            <img src="/li.png" alt="Learn with Expert" className="course-imagess" />
             <div className="course-text">
               <a href="/formations" className="course-link">Learn with Expert</a>
               <p>

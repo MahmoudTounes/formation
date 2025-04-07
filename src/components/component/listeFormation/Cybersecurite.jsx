@@ -13,7 +13,7 @@ const courses = [
         price: 34.99,
         originalPrice: null,
         imageUrl: 'nd.png', // Replace with actual image URL
-        link: '/course/python-deep-learning',
+        link: '/CoursesDta',
     },
     {
         title: 'Analyse de Données avec Python: Numpy, Pandas et Matplotlib',
