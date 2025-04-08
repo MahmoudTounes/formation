@@ -128,7 +128,7 @@ body {
     transition: opacity 0.3s ease, transform 0.3s ease;
     padding: 10px;
     box-sizing: border-box;
-    text-align: center;
+ 
     animation: fadeIn 0.5s ease-in-out; /* Add fade-in animation */
   }
   

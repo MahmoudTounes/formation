@@ -4,15 +4,18 @@
   position: relative;
   background-image: url('/imagees.png');
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw; /* Take full viewport width */
+
+  padding-top: 100px;
+
+  width: 100%;
+  padding: 20px;
+  display: flex
+;
+  justify-content: space-between;
+
+  background-color: #1eb2a663;
   height: 90vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 0px;
-  padding-top: 100px; 
+  box-sizing: border-box;
   
 }
 

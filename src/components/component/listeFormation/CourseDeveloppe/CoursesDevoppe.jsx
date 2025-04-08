@@ -1,26 +1,26 @@
 import React from 'react';
-import VideoCourseList from './VideoCourseList';
-import CoursesDefinition from './CoursesDefinition';
-import CoursesFormateurSpecifique from '../CourseDeveloppe/CoursesFormateurSpecifique';
-import './CoursesData.css'; // Assuming you have a CSS file
-
-function CoursesDta() {
+import CoursesWebDev from './CoursesWebDev';
+import CoursesWeb from './CoursesWeb';
+import CoursesFormateur from './CoursesFormateurSpecifique';
+import '../Courses/CoursesData.css'
+function CoursesDevoppe() {
   return (
     <div className="course-details-containerhh">
       <div className="left-columnhh">
         <div className="breadcrumbshh">
-          Développement &gt; Science des données &gt; Deep Learning
+          Développement  Développement Web  Développement Web
         </div>
-        <h1>Python pour le Deep Learning & Machine Learning: A à Z</h1>
-        <p className="subtitlehh">Cours complet sur le Machine Learning pour maîtriser l'intelligence artificielle, Tensorflow, et les réseaux de neurones</p>
+        <h1>Formation Complète Développeur Web</h1>
+        <p className="subtitlehh">Le Développement Web de A à Z. Apprenez HTML, CSS, Javascript, jQuery, Bootstrap, PHP, MySQL, Wordpress...</p>
         <div className="rating-enrollmenthh">
-          <span className="ratinghh">4,6 ⭐⭐⭐⭐⭐ (344 notes)</span>
+          <span className="ratinghh">Meilleure vente</span>
+          <span className="ratinghh">4,5 ⭐⭐⭐⭐⭐ (27 658 notes)</span>
           <span className="separatorhh"></span>
-          <span className="enrollmenthh">36 402 participants</span>
+          <span className="enrollmenthh">77 583 participants</span>
         </div>
-        <div className="created-byhh">Créé par Clém Donnet</div>
+        <div className="created-byhh">Créé par John Taieb (Codeur), Apprendre à Coder</div>
         <div className="last-updated-languagehh">
-          <span className="last-updatedhh">Dernière mise à jour : 01/2024</span>
+          <span className="last-updatedhh">Dernière mise à jour : 11/2024</span>
           <span className="separatorhh">•</span>
           <span className="languagehh">Français</span>
           <span className="separatorhh">•</span>
@@ -33,31 +33,43 @@ function CoursesDta() {
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
               </svg>
-              Apprenez à utiliser différents frameworks en Python pour résoudre des problèmes du monde réel à l'aide du Deep Learning et de l'intelligence artificielle
+              +65000 étudiants, le cours le plus populaire sur le marché francophone
             </li>
             <li>
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
               </svg>
-              Construisez des réseaux de neurones artificiels avec TensorFlow et Keras
+              7 projets concrets de A à Z
             </li>
             <li>
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
               </svg>
-              Faire des prédictions à l'aide de la régression linéaire, de la régression polynomiale et de la régression multivariée
+              11 Quiz pour tester vos connaissances
             </li>
             <li>
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
               </svg>
-              Apprenez les bases de la théorie du Machine Learning et du Deep Learning
+              Conseils de Coach pour votre futur de Développeur Web
             </li>
             <li>
               <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                 <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
               </svg>
-              Apprenez à utiliser le Machine Learning et le Deep Learning en Python
+              Votre Site Web perso avec Portfolio
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+              </svg>
+              Créer des sites et applications Web
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+              </svg>
+              Gagner de l'argent grâce à vos compétences de Développeur Web.
             </li>
           </ul>
         </div>
@@ -65,9 +77,10 @@ function CoursesDta() {
           <section className="related-topicshh">
             <h2>Découvrir les sujets associés</h2>
             <div className="topics-list">
-              <button className="topic-buttonhh">Deep Learning</button>
-              <button className="topic-buttonhh">Science des données</button>
+              <button className="topic-buttonhh">Développement Web</button>
               <button className="topic-buttonhh">Développement</button>
+              <button className="topic-buttonhh">HTML</button>
+              <button className="topic-buttonhh">CSS</button>
             </div>
           </section>
 
@@ -78,19 +91,19 @@ function CoursesDta() {
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                   <path d="M19 7h-1V5c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-6 10V9l-4 4 4 4zM6 7V5c0-.55.45-1 1-1h8c.55 0 1 .45 1 1v2H6z"></path>
                 </svg>
-                Vidéo à la demande de 4,5 heures
+                48,5 heures de vidéo à la demande
               </li>
               <li className="includes-item">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                   <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8 14H7v-2h4v2zm4 0h-4v-2h4v2zm2-4H7v-2h8v2zm0-4H7V6h10v2z"></path>
                 </svg>
-                3 articles
+                13 articles
               </li>
               <li className="includes-itemhh">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                   <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"></path>
                 </svg>
-                21 ressources téléchargeables
+                9 ressources téléchargeables
               </li>
               <li className="includes-itemhh">
                 <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
@@ -109,20 +122,19 @@ function CoursesDta() {
 
           <section className="course-content-overview">
             <h2>Contenu du cours</h2>
-            <p>21 sections • 146 sessions • Durée totale: 4 h 38 min</p>
+            <p>29 sections • 338 sessions • Durée totale: 48 h 33 min</p>
             <button className="expand-sections-button">Développer toutes les sections</button>
           </section>
         </div>
         <div className="guaranteehhapp">
-          <VideoCourseList />
-          <CoursesDefinition/>
-          <CoursesFormateurSpecifique/>
-          
+          <CoursesWebDev/>
+          <CoursesWeb/>
+          <CoursesFormateur/>
         </div>
       </div>
       <div className="right-columnhh">
         <div className="video-previewhh">
-          <img src="/pd.png" alt="Course Previewhh" />
+          <img src="/na.png" alt="Course Previewhh" />
           <div className="preview-badge">Afficher un aperçu de ce cours</div>
         </div>
         <div className="tabs">
@@ -137,24 +149,25 @@ function CoursesDta() {
           <p className="cancel-anytime">Annulez à tout moment</p>
           <div className="or-separatorhh">ou</div>
           <div className="single-purchasehh">
-            <div className="price">$34,99 $US</div>
+            <div className="price">19,99 $US</div>
             <button className="add-to-carthh">Ajouter au panier</button>
-      <button className="buy-now-buttonsezr">Acheter maintenant</button>
-      <p className="guaranteezes">Garantie satisfait ou remboursé de 30 jours</p>
-      <p className="accesszer">Accès complet illimité</p>
-      <div className="share-offerzert">
-      
-        <button className="offer-buttonzerds">Offrir ce cours</button>
-      </div>
-      
-        <button className="apply-coupon-buttonsdx">Appliquer le coupon</button>
-        <div className="applied-couponsxcd">
-          <div className="coupon-info">
-            <span className="coupon-codesdxcvf">LETSLEARNNOW</span> <span className="applied-text">est appliqué</span>
-            <span className="coupon-label">Coupon Udemy</span>
-          </div>
-         
-<div className="coupon-subscription-containerrrr">
+
+            <div className="purchase-details-containerreds">
+              <button className="buy-now-buttonsezr">Acheter maintenant</button>
+              <p className="guaranteezes">Garantie satisfait ou remboursé de 30 jours</p>
+              <p className="accesszer">Accès complet illimité</p>
+              <div className="share-offerzert">
+                <button className="offer-buttonzerds">Offrir ce cours</button>
+              </div>
+              <div className="coupon-sectionzesx">
+                <button className="apply-coupon-buttonsdx">Appliquer le coupon</button>
+                <div className="applied-couponsxcd">
+                  <div className="coupon-info">
+                    <span className="coupon-codesdxcvf">UDEMYNEWYEAR</span> <span className="applied-text">est appliqué</span>
+                    <span className="coupon-label">Coupon Udemy</span>
+                  </div>
+                  
+                  <div className="coupon-subscription-containerrrr">
       <div className="coupon-sectionrrr">
         <input type="text" placeholder="Saisissez le coupon" className="coupon-input" />
         <button className="apply-buttonttt">Appliquer</button>
@@ -174,15 +187,15 @@ function CoursesDta() {
         <p className="cancel-anytimerrrr">Annulez à tout moment</p>
       </div>
     </div> 
-        </div>
-      
-      </div>
-    </div>
+                </div>
+             
+              </div>
+            </div>
           </div>
         </div>
-    
- 
+      </div>
+    </div>
   );
 }
 
-export default CoursesDta;
+export default CoursesDevoppe;

@@ -17,7 +17,7 @@ background-color: #1eb2a663;
   justify-content: space-between; /* Espace uniformément les éléments */
   align-items: center; /* Centre verticalement les éléments */
   background-color: #1eb2a663;
-  height: 100%; /* Prend toute la hauteur du parent (si défini) */
+  height: 1000%; /* Prend toute la hauteur du parent (si défini) */
   box-sizing: border-box; /* Important pour inclure le padding dans la largeur totale */
   
 

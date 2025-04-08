@@ -8,9 +8,9 @@ const topCategories = [
     'Développement Web',
     'JavaScript',
     'React JS',
-    'Cadre d\'application Angular',
+    
     'Java',
-    'Développement Android',
+    
 ];
 
 const subCategoriesData = {
@@ -46,7 +46,7 @@ const allCourses = [
         imageUrl: 'na.png',
         isBestSeller: true,
         category: 'Développement Web',
-        link: '/course/developpement-web-complet-1',
+        link: '/CoursesDevoppe',
     },
     {
         title: 'Formation Complète Développeur Web 2',
@@ -57,7 +57,7 @@ const allCourses = [
         originalPrice: 189.99,
         imageUrl: 'ns.png',
         category: 'Développement Web',
-        link: '/course/developpement-web-complet-2',
+        link: '/CoursesWeb2',
     },
     {
         title: 'Formation Complète Développeur Web 3',
@@ -68,7 +68,7 @@ const allCourses = [
         originalPrice: 169.99,
         imageUrl: 'nm.png',
         category: 'Développement Web',
-        link: '/course/developpement-web-complet-3',
+        link: '/CoursesWeb3',
     },
     {
         title: 'Formation Complète Développeur Web 4',
@@ -79,7 +79,7 @@ const allCourses = [
         originalPrice: 199.99,
         imageUrl: 'nn.png',
         category: 'Développement Web',
-        link: '/course/developpement-web-complet-4',
+        link: '/CoursesWeb4',
     },
     {
         title: 'JavaScript - The Complete Guide 2024 1',
@@ -90,7 +90,7 @@ const allCourses = [
         originalPrice: 199.99,
         imageUrl: 'java.jpg',
         category: 'JavaScript',
-        link: '/course/javascript-complete-1',
+        link: '/COursesJavaDev',
     },
     {
         title: 'JavaScript - The Complete Guide 2024 2',
@@ -101,7 +101,7 @@ const allCourses = [
         originalPrice: 194.99,
         imageUrl: 'java.jpg',
         category: 'JavaScript',
-        link: '/course/javascript-complete-2',
+        link: '/CoursesJavaDevapp',
     },
     {
         title: 'JavaScript - The Complete Guide 2024 3',
@@ -112,7 +112,7 @@ const allCourses = [
         originalPrice: 209.99,
         imageUrl: 'java.jpg',
         category: 'JavaScript',
-        link: '/course/javascript-complete-3',
+        link: '/CoursesJavaDevappl2',
     },
     {
         title: 'JavaScript - The Complete Guide 2024 4',
@@ -123,7 +123,7 @@ const allCourses = [
         originalPrice: 189.99,
         imageUrl: 'java.jpg',
         category: 'JavaScript',
-        link: '/course/javascript-complete-4',
+        link: '/CoursesJavaDevapp5',
     },
     {
         title: 'React - The Complete Guide 1',
@@ -134,7 +134,7 @@ const allCourses = [
         originalPrice: 209.99,
         imageUrl: 'nm.png',
         category: 'React JS',
-        link: '/course/react-complete-1',
+        link: '/CoursesJavaDevs5',
     },
     {
         title: 'React - The Complete Guide 2',
@@ -145,7 +145,7 @@ const allCourses = [
         originalPrice: 219.99,
         imageUrl: 'nn.png',
         category: 'React JS',
-        link: '/course/react-complete-2',
+        link: '/CoursesJavaDeva6',
     },
     {
         title: 'React - The Complete Guide 3',

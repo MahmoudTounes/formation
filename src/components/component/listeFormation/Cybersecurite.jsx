@@ -75,7 +75,7 @@ function CourseCard({ course }) {
 
 function Formations() {
     return (
-        <div className="drawer-contentazq">
+        <div className="drawer-contentaerss">
             <Interformation />
           
             <div className="data-science-sectionaz">

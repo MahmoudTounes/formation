@@ -111,6 +111,7 @@
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
+  width: 30px;
 }
 
 .video-previewhh {
@@ -248,12 +249,55 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
-
-.single-purchasehh button {
+.add-to-carthh{
   background-color: #fff;
-  color: #010101;
+  color: #1c181b;
   border: none;
-  padding: 1px;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+  margin: 15px
+
+}
+.buy-now-buttonsezr{
+  background-color: #fdfcff;
+  color: #1c181b;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+  margin: 15px
+
+}
+.offer-buttonzerds{
+  background-color: #dddbe0;
+  color: #1c181b;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 100%;
+  margin-bottom: 8px;
+  transition: background-color 0.2s ease;
+  margin: 15px
+
+
+}
+
+.single-purchasehh  {
+  background-color: #fff;
+  color: #1c181b;
+  border: none;
+  padding: 10px;
   border-radius: 4px;
   cursor: pointer;
   font-size: 1rem;
@@ -262,9 +306,6 @@
   transition: background-color 0.2s ease;
 }
 
-.single-purchasehh button:hover {
-  background-color: #8627c4;
-}
 
 .single-purchasehh .buy-nowhh {
   background-color: #007791;
@@ -378,7 +419,7 @@
 }
 
 .buy-now-buttonsezr {
-  background-color: #a435f0;
+  background-color: #6a6f73;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -391,7 +432,7 @@
 }
 
 .buy-now-buttonsezr:hover {
-  background-color: #862aa7;
+  background-color: #fff;
 }
 
 .guaranteezes,
@@ -409,119 +450,37 @@
 
 .share-buttonzeds,
 .offer-buttonzerds {
-  background: none;
-  border: none;
-  color: #007791;
-  font-size: 0.9rem;
-  cursor: pointer;
-  padding: 8px 15px;
-  transition: color 0.2s ease;
-}
-
-.share-buttonzeds:hover,
-.offer-buttonzerds:hover {
-  color: #005a6e;
-  text-decoration: underline;
-}
-
-.coupon-sectionzesx {
-  margin-top: 15px;
-}
-
-.apply-coupon-buttonsdx {
-  background: none;
-  border: none;
-  color: #007791;
-  font-size: 0.9rem;
-  cursor: pointer;
-  padding: 8px 15px;
-  margin-bottom: 10px;
-  transition: color 0.2s ease;
-}
-
-.apply-coupon-buttonsdx:hover {
-  color: #005a6e;
-  text-decoration: underline;
-}
-
-.applied-couponsxcd {
-  background-color: #f7f9fa;
-  border: 1px solid #d1d7dc;
-  border-radius: 4px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.coupon-info {
-  text-align: left;
-}
-
-.coupon-codesdxcvf {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #1c1d1f;
-  margin-right: 5px;
-}
-
-.applied-text {
-  font-size: 0.9rem;
-  color: #505763;
-  margin-right: 5px;
-}
-
-.coupon-label {
-  font-size: 0.8rem;
-  color: #6a6f73;
-}
-
-.remove-coupon-buttonsdeza {
-  background: none;
-  border: none;
-  color: #6a6f73;
-  cursor: pointer;
-  padding: 5px;
-  transition: color 0.2s ease;
-}
-
-.remove-coupon-buttonsdeza:hover {
-  color: #1c1d1f;
-}
-
-.remove-coupon-buttonsdeza svg {
-  width: 18px;
-  height: 18px;
-}
-
-
- .coupon-inputeszr {
-  display: flex;
-  gap: 10px;
-}
-
-.coupon-inputeszr input {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #d1d7dc;
-  border-radius: 4px;
-  font-size: 0.9rem;
-}
-
-.coupon-inputeszr .apply-buttonzqa {
-  background-color: #007791;
+  background-color: #6a6f73;
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 10px 15px;
-  font-size: 0.9rem;
+  padding: 12px 24px;
+  font-size: 1rem;
   cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
   transition: background-color 0.2s ease;
+  padding-left: 50px;
+}
+.apply-buttonttt{
+  color: #150909;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+
+  padding-left: 50px;
+  background-color: #6a6f73;
+
 }
 
-.coupon-inputeszr .apply-buttonzqa:hover {
-  background-color: #005a6e;
-} 
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

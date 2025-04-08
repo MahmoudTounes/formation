@@ -49,6 +49,12 @@ import Payer from './components/component/Categories/Payer';
 import CoursesDta from './components/component/listeFormation/Courses/CoursesDta'
 import VideoCourseList from './components/component/listeFormation/Courses/VideoCourseList'
 import CoursesDefinition from './components/component/listeFormation/Courses/CoursesDefinition';
+import CoursesDevoppe from './components/component/listeFormation/CourseDeveloppe/CoursesDevoppe'
+import CoursesWeb from './components/component/listeFormation/CourseDeveloppe/CoursesWeb';
+import CoursesWebDev from './components/component/listeFormation/CourseDeveloppe/CoursesWebDev';
+import CoursesFormateurSpecifique from './components/component/listeFormation/CourseDeveloppe/CoursesFormateurSpecifique';
+import CoursesWeb2 from './components/component/listeFormation/CourseDeveloppe/CoursesWeb2';
+import CoursesWebSpecifique from './components/component/listeFormation/CourseDeveloppe/CoursesWebSpecifique';
 import Register from './components/Register';
 import Login from './components/login';
 import Header from './components/Header';
@@ -160,8 +166,12 @@ function App() {
         <Route path ="/CoursesDta" element= {<CoursesDta/>}/>
         <Route path ="/VideoCourseList" element={<VideoCourseList/>}/>
         < Route path ="/ CoursesDefinition" element ={<CoursesDefinition/>}/>
-      
-       
+      <Route path='/CoursesDevoppe' element ={<CoursesDevoppe/>}/>
+      <Route path ='/CoursesWeb' element ={<CoursesWeb/>}/>
+      <Route path ='/CoursesWebDev' element ={<CoursesWebDev/>}/>
+      <Route path ='/CoursesFormateurSpecifique' element ={<CoursesFormateurSpecifique/>}/>
+      <Route path ='/CoursesWeb2' element ={<CoursesWeb2/>}/>
+      <Route path ="/CoursesWebSpecifique" element ={<CoursesWebSpecifique/>}/>
       </Routes>
     </BrowserRouter>
   );

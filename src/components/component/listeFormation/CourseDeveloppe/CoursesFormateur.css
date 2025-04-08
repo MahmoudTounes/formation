@@ -1,0 +1,133 @@
+.formatteurs-containerqqq {
+    font-family: sans-serif;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  h2 {
+    color: #512da8; /* Purple accent color */
+    margin-bottom: 20px;
+  }
+  
+  .formateur-cardqq {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formateur-nomqq {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+  }
+  
+  .formateur-accrocheqq {
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+  }
+  
+  .formateur-infoqqq {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .formateur-image-containerqqq {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+  }
+  
+  .formateur-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .formateur-image.small {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .formateur-statsqqq {
+    flex-grow: 1;
+  }
+  
+  .formateur-statsqqq p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  .formateur-stats.smallqqq p {
+    margin: 3px 0;
+    font-size: 0.9em;
+  }
+  
+  .icon {
+    margin-right: 5px;
+    color: #ffc107; /* Gold star color */
+  }
+  
+  .formateur-descriptionqqq {
+    margin-top: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
+  
+  .formateur-descriptionqqq h4 {
+    color: #512da8;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .description-shorqqqt {
+    margin-bottom: 10px;
+  }
+  
+  .show-more-button {
+    background: none;
+    border: none;
+    color: #007bff; /* Blue link color */
+    cursor: pointer;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  .show-more-button:hover {
+    text-decoration: underline;
+  }
+  
+  .arrow-down {
+    margin-left: 5px;
+    font-size: 0.8em;
+  }
+  
+  /* Styles pour le deuxième formateur (Apprendre à Coder) et suivants */
+  .formateur-infoqq {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .formateur-stats.smallqqq {
+    flex-grow: 1;
+  }
+  
+  .formateur-stats.smallqqq p {
+    margin: 3px 0;
+    font-size: 0.9em;
+  }
+  
+  .description-shortqqq {
+    margin-bottom: 10px;
+    font-size: 0.9em; /* Réduire la taille de la police pour le texte tronqué */
+    color: #666;
+  }

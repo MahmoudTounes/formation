@@ -4,7 +4,7 @@ import Initiationapp from './listeFormation/Initiationapp';
 import Bureautiqueapps from './listeFormation/Bureautiqueapps'
 function formations() {
     return (
-        <div className="drawer-content">
+        <div className="drawer-contentsss">
             <Interformation />
             <Initiationapp />
             <Bureautiqueapps/>
