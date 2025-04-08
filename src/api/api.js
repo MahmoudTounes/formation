@@ -1,21 +1,38 @@
-// api.js
 import axios from 'axios';
-import { getToken } from '../components/authService'; // Importez getToken
+
+// src/api/api.jsx
+const baseURL = 'http://localhost:5000'; // Vérifiez que c'est correct
 
 const api = axios.create({
-  baseURL: 'http://localhost:3007/api', // Votre URL de base
+  baseURL: baseURL,
 });
 
-// Intercepteur pour ajouter le token JWT aux requêtes
+// Intercepteur de requête pour ajouter le token aux requêtes si présent
 api.interceptors.request.use(
   (config) => {
-    const token = getToken();
+    const token = localStorage.getItem('token');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },
   (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Intercepteur de réponse pour gérer les erreurs d'authentification (par exemple, token expiré)
+api.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      // Gérer le cas où le token n'est pas valide ou a expiré
+      // Par exemple, rediriger l'utilisateur vers la page de connexion et supprimer le token
+      localStorage.removeItem('token');
+      // window.location.href = '/login'; // Redirigez si nécessaire
+    }
     return Promise.reject(error);
   }
 );

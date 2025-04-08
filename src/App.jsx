@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 import DrawerContent from './components/component/DrawerContent';
 import Connecter from './components/component/connecter';
 import Monpanier from './components/component/monpanier';
@@ -60,17 +60,17 @@ import Login from './components/login';
 import Header from './components/Header';
 // Assuming 'api', 'isAuthenticated', and 'removeToken' are defined elsewhere
  import api from './api/api'; 
- import { isAuthenticated, removeToken } from './components/authService'; 
+ import { isAuthenticated, removeToken, setToken } from './components/authService'; 
 function App() {
   const [cartItems, setCartItems] = useState([]); // État pour les articles du panier
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [data, setData] = useState(null);
+  
   useEffect(() => {
     // Assuming isAuthenticated is a function you've defined to check login status
    setIsLoggedIn(isAuthenticated());
-    // Replace the line above with your actual authentication check
-    // For now, let's just set it to false or true for testing
-    setIsLoggedIn(false);
+ 
+ 
   }, []);
   useEffect(() => {
     if (isLoggedIn && /* api */ true) { // Make sure 'api' is available
@@ -81,20 +81,18 @@ function App() {
     }
   }, [isLoggedIn]);
 
-  const handleLogin = async () => {
+    const handleLogin = async (loginData) => {
     try {
-     const response = await api.post('/api/auth/login', {
-   email: 'testuser@example.com', // Remplacez par l'email de l'utilisateur
-  password: 'password123',      // Remplacez par le mot de passe de l'utilisateur
-  accountType: 'professeur',    // Remplacez par le type de compte de l'utilisateur (professeur ou eleve)
- });
+      const response = await api.post('/auth/login', loginData);
+      setToken(response.data.access_token); // Stockez le token lors de la connexion
+        setIsLoggedIn(true);
+      navigate('/'); // Redirigez vers la page d'accueil après la connexion (modifier ici)
+            console.log('Login successful:', response.data);
+
+ 
 
       // Traitez la réponse ici (par exemple, stockez le token, redirigez l'utilisateur)
    console.log('Login successful:', response.data);
-      console.log('Login function called (replace with your actual login logic)');
-      // Assuming login is successful, update isLoggedIn
-      setIsLoggedIn(true);
-
     } catch (error) {
       // Gérez les erreurs ici
       console.error('Login failed:', error.response ? error.response.data : error.message);
@@ -105,6 +103,7 @@ function App() {
      removeToken();
     setIsLoggedIn(false);
     setData(null);
+      navigate('/login'); // Redirigez vers la page de connexion après la déconnexio
     console.log('Logout function called (replace with your actual logout logic)');
   };
 

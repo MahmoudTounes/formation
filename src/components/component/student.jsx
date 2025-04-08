@@ -34,14 +34,14 @@ function Student() {
     e.preventDefault();
     setErrorMessage(''); // Réinitialiser le message d'erreur
     try {
-      const response = await axios.post('http://localhost:3000/auth/login', {
+      const response = await axios.post('http://localhost:5000/auth/login', {
         email: loginData.email,
         password: loginData.password,
       });
       localStorage.setItem('token', response.data.access_token);
 
       // Récupérer les informations de l'utilisateur
-      const userResponse = await axios.get('http://localhost:3000/users/me', {
+      const userResponse = await axios.get('http://localhost:5000/users/me', {
         headers: {
           Authorization: `Bearer ${response.data.access_token}`,
         },
